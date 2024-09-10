@@ -1,0 +1,100 @@
+.heroContainer {
+    position: relative;
+    max-width: 100%;
+    height: calc(100vh - 180px);
+    margin: auto;
+    overflow: hidden;
+  }
+  
+  .carousel {
+    position: relative;
+  }
+  
+  .carouselImage {
+    width: 100%;
+    height: calc(100vh - 180px);
+    image-resolution: 70%;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .prevBtn,
+  .nextBtn {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 16px;
+    font-size: 18px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    z-index: 1000;
+    transition: 0.3s ease;
+  }
+  
+  .prevBtn {
+    left: 0;
+  }
+  
+  .nextBtn {
+    right: 0;
+  }
+  
+  .prevBtn:hover,
+  .nextBtn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Dots for navigation */
+  .dots {
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+  }
+  
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active,
+  .dot:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  
+  @media (max-width: 600px){
+    .heroContainer{
+      height: 300px;
+
+      .carouselImage{
+        height: 300px;
+      }
+    }
+  }
+
+  @media (max-width: 800px){
+    .heroContainer{
+      height: 350px;
+
+      .carouselImage{
+        height: 350px;
+      }
+    }
+  }
+
+  @media (max-width: 1020px){
+    .heroContainer{
+      height: 400px;
+
+      .carouselImage{
+        height: 400px;
+      }
+    }
+  }
