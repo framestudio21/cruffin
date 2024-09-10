@@ -8,7 +8,7 @@ export default function login() {
     <>
     <div className={Styles.mainbody}>
         <div className={Styles.loginbody}>
-            a
+            login
         </div>
     </div>
     </>
