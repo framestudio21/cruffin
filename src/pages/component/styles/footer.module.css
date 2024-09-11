@@ -1,0 +1,42 @@
+.footerbody{
+    width: 100%;
+    height: calc(100vh - 180px);
+    background-color: #452e36;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 1rem 1.7rem;
+
+    .bar{
+        width: 100%;
+        height: 1px;
+        background-color: #fff;
+    }
+
+    .policybody{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .poweredby{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            text-transform: capitalize;
+            letter-spacing: 3px;
+            font-weight: 700;
+            font-size: 20px;
+
+            .text{
+                text-transform: uppercase;
+            }
+        }
+
+        .poweredby a:hover{
+            text-decoration: underline;
+        }
+    }
+}

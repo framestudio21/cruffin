@@ -6,6 +6,7 @@ import Styles from "@/styles/Home.module.css";
 import HeroCarousel from "./component/herocarousel";
 import Card from "./component/card";
 import NavBar from "./component/nav";
+import Footer from "./component/footer";
 
 export default function Home() {
   return (
@@ -18,13 +19,14 @@ export default function Home() {
       </Head>
       <div>
         <NavBar/>
-        <HeroCarousel/> 
+        {/* <HeroCarousel/>  */}
         {/* <div className={Styles.cardcarousel}>
         <Card/>
         <Card/>
         <Card/>
         <Card/>
         </div> */}
+        <Footer/>
         
       </div>
     </>

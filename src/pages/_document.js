@@ -8,7 +8,6 @@ export default function Document() {
           href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet"
         />
-        <title>Create Next App</title>
       </Head>
       <body>
         <Main />

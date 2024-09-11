@@ -183,7 +183,6 @@ export default function Nav() {
           filteredRecommendations.length > 0) && (
           <div className={Styles.suggestionlist} ref={searchRef}>
             <div className={Styles.suggestionproduct}>
-              
               {/* Show Suggestions List if there are matches */}
               {suggestions.length > 0 && (
                 <div className={Styles.suggestion}>
@@ -239,17 +238,14 @@ export default function Nav() {
               )}
             </div>
 
-            <div className={Styles.bar}></div>
             {/* Show Recommendations List if there are matches */}
             {filteredRecommendations.length > 0 && (
               <div className={Styles.recommendations}>
+                <div className={Styles.bar}></div>
                 <div className={Styles.title}>Recommendations</div>
                 <ul>
                   {filteredRecommendations.map((recommendation) => (
-                    <li
-                      key={recommendation.id}
-                      className={Styles.productItem}
-                    >
+                    <li key={recommendation.id} className={Styles.productItem}>
                       <a href="#">
                         <Image
                           src={recommendation.image}
