@@ -26,7 +26,7 @@ export default function Home() {
         <Card/>
         <Card/>
         </div> */}
-        <Footer/>
+        {/* <Footer/> */}
         
       </div>
     </>
