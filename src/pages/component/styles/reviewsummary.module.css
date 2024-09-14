@@ -1,0 +1,77 @@
+.reviewSummary {
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid #452e36;
+  padding: 30px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  gap: 20px;
+  height: 300px;
+  .bar {
+    width: 1px;
+    height: 100%;
+    margin: 1rem 0;
+    background-color: #452e36;
+  }
+  
+  .ratingBlock {
+    width: 65%;
+  }
+
+  .reviewAction {
+    width: 35%;
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+  }
+}
+
+.star {
+  color: gold;
+}
+
+.ratings {
+  margin-top: 10px;
+}
+
+.ratingRow {
+  display: flex;
+  align-items: center;
+}
+
+.ratingLabel {
+  width: 50px;
+}
+
+.progressBar {
+  background-color: #ddd;
+  flex-grow: 1;
+  height: 20px;
+  margin: 0 10px;
+  position: relative;
+}
+
+.fill {
+  background-color: #ffc107;
+  height: 100%;
+}
+
+.percentage {
+  width: 50px;
+}
+
+
+
+.reviewButton {
+  background-color: #6a1b9a;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 5px;
+}

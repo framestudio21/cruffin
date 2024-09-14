@@ -4,6 +4,8 @@ import Link from 'next/link'
 
 import Nav from '../component/nav'
 import Footer from '../component/footer'
+import Card from "../component/card"
+import ReviewSummary from '../component/reviewsummary'
 
 import Styles from "@/styles/id.module.css"
 
@@ -24,10 +26,20 @@ export default function Id() {
     }
   };
 
+  const ratingsDistribution = {
+    5: 100, // Assuming 100% of reviews are 5-star
+    4: 0,
+    3: 0,
+    2: 0,
+    1: 0
+  };
+
   return (
     <>
     <Nav/>
     <div className={Styles.productidmainbody}>
+
+        {/* product information body */}
         <div className={Styles.productinformationbody}>
             <div className={Styles.imagebody}>
                 <Image src="/image/image3.jpg" alt='image' className={Styles.image} width={300} height={300}/>
@@ -88,6 +100,28 @@ export default function Id() {
                 </Link>
             </div>
         </div>
+
+        {/* product card */}
+        <div className={Styles.cardcarouselbody}>
+            <div className={Styles.title}>you may also like</div>
+            <div className={Styles.cardcarousel}>
+                <Card/>
+                <Card/>
+                <Card/>
+                <Card/>
+                <Card/>
+                <Card/>
+                <Card/>
+                <Card/>
+            </div>
+        </div>
+
+        {/* review system */}
+        <div className={Styles.reviewdiv}>
+            <div className={Styles.title}>coustomer reviews</div>
+            <ReviewSummary averageRating={5.0} totalReviews={8} ratingsDistribution={ratingsDistribution} />
+        </div>
+
     </div>
     <Footer/>
     </>

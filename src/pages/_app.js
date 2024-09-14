@@ -1,7 +1,10 @@
-import "@/styles/globals.css";
 import Head from "next/head";
+import dynamic from "next/dynamic";
 
-export default function App({ Component, pageProps }) {
+import "@/styles/globals.css";
+
+export default dynamic(() => Promise.resolve(App), { ssr: false });
+function App({ Component, pageProps }) {
   return (
     <>
       <Head>
