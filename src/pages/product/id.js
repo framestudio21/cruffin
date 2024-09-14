@@ -6,6 +6,7 @@ import Nav from '../component/nav'
 import Footer from '../component/footer'
 import Card from "../component/card"
 import ReviewSummary from '../component/reviewsummary'
+import ReviewList from '../component/reviewlist'
 
 import Styles from "@/styles/id.module.css"
 
@@ -28,11 +29,32 @@ export default function Id() {
 
   const ratingsDistribution = {
     5: 100, // Assuming 100% of reviews are 5-star
-    4: 0,
-    3: 0,
-    2: 0,
+    4: 30,
+    3: 40,
+    2: 70,
     1: 0
   };
+
+  const reviews = [
+    {
+      id: 1,
+      author: 'Varsha Prajapati',
+      rating: 4,
+      text: 'I order of 6 package in hazelnut and chocolate but I more than hazelnut is very good in taste chocolate little bit less in chocolate flavour mango I don\'t like so I not taste but overall ok',
+      date: 'Aug 5, 2024',
+      likes: 6,
+      photo: "/image/card1.webp"
+    },
+    {
+      id: 2,
+      author: 'Harshita',
+      rating: 5,
+      text: 'Loved the photos and others review. I have not tried these cruffins but I believe that these are very delicious.',
+      date: 'Jun 25, 2024',
+      likes: 12
+    }
+  ];
+  
 
   return (
     <>
@@ -47,7 +69,7 @@ export default function Id() {
                 <div className={Styles.sale}>for sale</div>
             </div>
             <div className={Styles.detailsbody}>
-                <div className={Styles.store}>My Store</div>
+                <div className={Styles.store}><Link href="#">My store</Link>{` > `}<Link href="#">cruffin</Link></div>
                 <div className={Styles.name}>Assorted pack of 6 (with Mango) Cruffins</div>
                 <div className={Styles.ratting}>
                     <Link href="#">
@@ -121,6 +143,14 @@ export default function Id() {
             <div className={Styles.title}>coustomer reviews</div>
             <ReviewSummary averageRating={5.0} totalReviews={8} ratingsDistribution={ratingsDistribution} />
         </div>
+
+        {/* review comments system */}
+        <div className={Styles.reviewcommetsdiv}>
+            <div className={Styles.text}>Review with commetns</div>
+        </div>
+
+        {/* review list system */}
+        <ReviewList reviews={reviews} />
 
     </div>
     <Footer/>

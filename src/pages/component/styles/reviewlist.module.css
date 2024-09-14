@@ -1,0 +1,6 @@
+/* components/ReviewList.module.css */
+.list {
+    display: flex;
+    flex-direction: column;
+  }
+  

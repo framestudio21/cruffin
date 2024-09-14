@@ -6,8 +6,10 @@ const ReviewSummary = ({ averageRating, totalReviews, ratingsDistribution }) => 
     <div className={styles.reviewSummary}>
       <div className={styles.ratingBlock}>
        <div className={styles.reviewstar}>
-       <h1>{averageRating.toFixed(1)} <span className={styles.star}>★</span></h1>
-       <p>{totalReviews} Reviews</p>
+       <div className={styles.h1text}>{averageRating.toFixed(1)} 
+        {/* <span className={styles.star}>★</span> */}
+        </div>
+       <div className={styles.ptext}>({totalReviews}) Reviews</div>
        </div>
         <div className={styles.ratings}>
           {Object.keys(ratingsDistribution).map((rating) => (
@@ -23,8 +25,8 @@ const ReviewSummary = ({ averageRating, totalReviews, ratingsDistribution }) => 
       </div>
       <div className={styles.bar}></div>
       <div className={styles.reviewAction}>
-        <h2>Review this product</h2>
-        <p>Share your thoughts with other customers</p>
+        <div className={styles.h1text}>Review this product</div>
+        <div className={styles.ptext}>Share your thoughts with other customers</div>
         <button className={styles.reviewButton}>Write a review</button>
       </div>
     </div>

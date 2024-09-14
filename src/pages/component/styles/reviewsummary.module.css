@@ -11,22 +11,130 @@
   -o-border-radius: 10px;
   gap: 20px;
   height: 300px;
+  color: #452e36;
+
   .bar {
     width: 1px;
     height: 100%;
     margin: 1rem 0;
     background-color: #452e36;
   }
-  
+
   .ratingBlock {
     width: 65%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-items: center;
+
+    .reviewstar {
+      width: 35%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .h1text {
+        font-weight: 700;
+        font-size: 70px;
+      }
+
+      .ptext {
+        text-transform: capitalize;
+        letter-spacing: 2px;
+        font-weight: 500;
+        font-size: 20px;
+      }
+    }
+
+    .ratings {
+      /* margin-top: 10px; */
+      width: 60%;
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 10px;
+      justify-content: space-around;
+
+      .ratingRow {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        .ratingLabel {
+          font-weight: 600;
+          font-size: 20px;
+        }
+
+        .progressBar {
+          background-color: #ddd;
+          border: 1px solid #ddd;
+          flex-grow: 1;
+          height: 20px;
+          position: relative;
+          border-radius: 50px;
+          -webkit-border-radius: 50px;
+          -moz-border-radius: 50px;
+          -ms-border-radius: 50px;
+          -o-border-radius: 50px;
+        }
+
+        .fill {
+          background-color: #452e36;
+          border-radius: 50px;
+          height: 100%;
+        }
+
+        .percentage {
+          font-weight: 400;
+          font-size: 16px;
+        }
+      }
+    }
   }
 
   .reviewAction {
     width: 35%;
-    text-align: center;
-    padding: 20px;
-    border-radius: 5px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+
+    .h1text{
+      font-weight: 700;
+      letter-spacing: 1px;
+      font-size: 40px;
+      text-transform: capitalize;
+    }
+    
+    .ptext{
+      text-transform: capitalize;
+      font-weight: 500;
+      font-size: 18px;
+    }
+
+    .reviewButton {
+      background-color: #452e36;
+      color: white;
+      border: 1px solid #452e36;
+      padding: 10px 20px;
+      font-size: 20px;
+      cursor: pointer;
+      text-transform: capitalize;
+      letter-spacing: 1px;
+      font-weight: 500;
+      border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
+}
+
+.reviewButton:hover{
+  background-color: #ddd;
+  color: #452e36;
+}
   }
 }
 
@@ -34,44 +142,6 @@
   color: gold;
 }
 
-.ratings {
-  margin-top: 10px;
-}
-
-.ratingRow {
-  display: flex;
-  align-items: center;
-}
-
-.ratingLabel {
-  width: 50px;
-}
-
-.progressBar {
-  background-color: #ddd;
-  flex-grow: 1;
-  height: 20px;
-  margin: 0 10px;
-  position: relative;
-}
-
-.fill {
-  background-color: #ffc107;
-  height: 100%;
-}
-
-.percentage {
-  width: 50px;
-}
 
 
 
-.reviewButton {
-  background-color: #6a1b9a;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  margin-top: 10px;
-  border-radius: 5px;
-}
