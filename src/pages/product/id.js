@@ -39,7 +39,9 @@ export default function Id() {
     {
       id: 1,
       author: 'Varsha Prajapati',
+      authorInitials: 'vp',
       rating: 4,
+      title: 'Loved the photos and others review',
       text: 'I order of 6 package in hazelnut and chocolate but I more than hazelnut is very good in taste chocolate little bit less in chocolate flavour mango I don\'t like so I not taste but overall ok',
       date: 'Aug 5, 2024',
       likes: 6,
@@ -47,12 +49,41 @@ export default function Id() {
     },
     {
       id: 2,
+      authorInitials: 'vp',
       author: 'Harshita',
       rating: 5,
       text: 'Loved the photos and others review. I have not tried these cruffins but I believe that these are very delicious.',
       date: 'Jun 25, 2024',
       likes: 12
-    }
+    },
+    {
+        id: 3,
+      authorInitials: 'vp',
+      author: 'Varsha Prajapati',
+        rating: 4,
+        text: 'I order of 6 package in hazelnut and chocolate but I more than hazelnut is very good in taste chocolate little bit less in chocolate flavour mango I don\'t like so I not taste but overall ok',
+        date: 'Aug 5, 2024',
+        likes: 6,
+        photo: "/image/card1.webp"
+      },
+      {
+        id: 4,
+      authorInitials: 'vp',
+      author: 'Harshita',
+        rating: 5,
+        text: 'Loved the photos and others review. I have not tried these cruffins but I believe that these are very delicious.I order of 6 package in hazelnut and chocolate but I more than hazelnut is very good in taste chocolate little bit less in chocolate flavour mango I don\'t like so I not taste but overall ok.I order of 6 package in hazelnut and chocolate but I more than hazelnut is very good in taste chocolate little bit less in chocolate flavour mango I don\'t like so I not taste but overall ok',
+        date: 'Jun 25, 2024',
+        likes: 12
+      },
+      {
+        id: 5,
+      authorInitials: 'vp',
+      author: 'Harshita',
+        rating: 5,
+        text: 'Loved the photos and others review. I have not tried these cruffins but I believe that these are very delicious.I order of 6 package in hazelnut and chocolate but I more than hazelnut is very good in taste chocolate little bit less in chocolate flavour mango I don\'t like so I not taste but overall ok.I order of 6 package in hazelnut and chocolate but I more than hazelnut is very good in taste chocolate little bit less in chocolate flavour mango I don\'t like so I not taste but overall ok',
+        date: 'Jun 25, 2024',
+        likes: 12
+      }
   ];
   
 
@@ -146,11 +177,9 @@ export default function Id() {
 
         {/* review comments system */}
         <div className={Styles.reviewcommetsdiv}>
-            <div className={Styles.text}>Review with commetns</div>
+            <div className={Styles.title}>Review with commetns</div>
+            <ReviewList reviews={reviews} />
         </div>
-
-        {/* review list system */}
-        <ReviewList reviews={reviews} />
 
     </div>
     <Footer/>

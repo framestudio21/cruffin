@@ -1,44 +1,108 @@
 /* components/Review.module.css */
 .review {
-    border: 1px solid #ccc;
-    margin: 10px;
-    padding: 10px;
-    border-radius: 5px;
-  }
-  
+  border-bottom: 2px solid #452e36;
+  padding: 10px;
+  width: calc(100% / 2.1);
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
   .header {
     display: flex;
     align-items: center;
-  }
-  
-  .authorInitials {
-    width: 40px;
-    height: 40px;
-    border-radius: 20px;
-    background-color: #ccc;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 10px;
+    gap: 20px;
+
+    .authorInitials {
+      width: 70px;
+      height: 70px;
+      border-radius: 50px;
+      background-color: #ccc;
+      color: #452e36;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 25px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      -webkit-border-radius: 50px;
+      -moz-border-radius: 50px;
+      -ms-border-radius: 50px;
+      -o-border-radius: 50px;
+    }
+
+    .authorDetails {
+      .name{
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: capitalize;
+        font-size: 22px;
+      }
+
+      .date{
+        text-transform: capitalize;
+        letter-spacing: 1px;
+        font-size: 14px;
+      }
+    }
   }
   
-  .authorDetails div {
-    font-size: 14px;
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    .stars {
+      font-size: 40px;
+      color: gold;
+      /* display: flex; */
+      /* gap: 10px; */
+    }
+
+    .title{
+      text-transform: capitalize;
+      letter-spacing: 2px;
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .text{
+      letter-spacing: 1px;
+      font-size: 20px;
+      text-transform: capitalize;
+      text-align: justify;
+    }
   }
-  
-  .content .stars {
-    color: gold;
-  }
-  
+
   .footer {
     display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-  }
+    gap: 10px;
   
-  .likeButton, .reportButton {
-    border: none;
-    background: none;
-    cursor: pointer;
-  }
+    .bar{
+      width: 1px;
+      height: 100%;
+      background-color: #452e36;
+    }
   
+    .likeButton,
+    .reportButton {
+      border: none;
+      padding: 5px 15px;
+      letter-spacing: 1px;
+      font-size: 18px;
+      border-radius: 10px;
+      background: none;
+      color: #452e36;
+      cursor: pointer;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
+  }
+  }
+}
+
+
+

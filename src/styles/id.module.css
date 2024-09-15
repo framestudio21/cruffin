@@ -363,4 +363,21 @@
             font-weight: 500;
         }
     }
+
+    /* coustomer review body */
+    .reviewcommetsdiv{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        padding: 2rem;
+        color: #452e36;
+
+        .title{
+            text-transform: capitalize;
+            letter-spacing: 2px;
+            font-size: 24px;
+            font-weight: 500;
+        }
+    }
 }
