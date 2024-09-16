@@ -1,7 +1,20 @@
 import React from 'react';
+import { useProduct } from '../../context/ProductContext'
+
 import styles from './styles/reviewsummary.module.css';
 
 const ReviewSummary = ({ averageRating, totalReviews, ratingsDistribution }) => {
+
+  // const { setProductDetails, setIsPopupVisible } = useProduct();
+
+  const handleWriteReviewClick = () => {
+    setProductDetails({
+      name: 'Assorted Pack of 6 (with Mango) Cruffins',
+      image: '/image/image3.jpg'
+    });
+    setIsPopupVisible(true);
+  };
+
   return (
     <div className={styles.reviewSummary}>
       <div className={styles.ratingBlock}>
@@ -27,7 +40,7 @@ const ReviewSummary = ({ averageRating, totalReviews, ratingsDistribution }) => 
       <div className={styles.reviewAction}>
         <div className={styles.h1text}>Review this product</div>
         <div className={styles.ptext}>Share your thoughts with other customers</div>
-        <button className={styles.reviewButton}>Write a review</button>
+        <button className={styles.reviewButton} onClick={handleWriteReviewClick}>Write a review</button>
       </div>
     </div>
   );
