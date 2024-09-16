@@ -76,6 +76,12 @@
     }
   }
 
+  .imagebody{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
   .footer {
     display: flex;
     gap: 10px;

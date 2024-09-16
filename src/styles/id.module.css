@@ -1,26 +1,27 @@
-.productidmainbody {
+/* .productidmainbody {
     width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    padding: 1rem;
 
-    /* product display body */
+    product display body
     .productinformationbody {
         width: 100%;
-        height: 100vh;
         display: flex;
-    padding: 2rem;
     justify-content: space-between;
 
         .imagebody {
             width: 55%;
-            height:100%;
+            height: calc(100vh - 180px);
             position: relative;
 
             .image {
                 width: 100%;
                 height: 100%;
-            }
+            } 
 
             .tag {
                 position: absolute;
@@ -51,10 +52,9 @@
         .detailsbody {
             width: 45%;
             padding: 0 3rem;
-            height: 100%;
+            height: calc(100vh - 180px); 
             overflow-y: scroll;
             overflow-x: hidden;
-            scroll-behavior: smooth;
             display: flex;
             flex-direction: column;
             gap: 20px;
@@ -159,8 +159,6 @@
                 display: flex;
                 flex-direction: column;
                 gap: 5px;
-                /* justify-content: center; */
-                /* align-items: center; */
 
                 .text {
                     text-transform: capitalize;
@@ -175,7 +173,6 @@
                     justify-content: space-between;
                     gap: 20px;
                     border: 2px solid #452e36;
-                    /* padding: 0.5rem 1rem; */
                     width: 50%;
                     user-select: none;
 
@@ -220,13 +217,13 @@
                     font-size: 24px;
                     cursor: pointer;
                     position: relative;
-                    /* To position the tooltip relative to this element */
+                    To position the tooltip relative to this element
                 }
 
                 .hovertext {
                     position: absolute;
                     top: -40px;
-                    /* Adjust as necessary to move tooltip above the icon */
+                    Adjust as necessary to move tooltip above the icon
                     left: 0;
                     background-color: #452e36;
                     color: #fff;
@@ -238,7 +235,7 @@
                     opacity: 0;
                     transition: opacity 0.3s ease-in-out;
                     white-space: nowrap;
-                    /* Prevents breaking long words */
+                    Prevents breaking long words
                 }
 
                 .icons:hover .hovertext {
@@ -264,7 +261,7 @@
                 gap: 10px;
                 /* align-items: center; */
 
-                .text {
+                /* .text {
                     text-transform: capitalize;
                     letter-spacing: 2px;
                     font-size: 18px;
@@ -324,7 +321,7 @@
         }
     }
 
-    /* card carousel body */
+    card carousel body
     .cardcarouselbody{
         display: flex;
         flex-direction: column;
@@ -348,7 +345,7 @@
         }
     }
 
-    /* coustomer review body */
+    coustomer review body
     .reviewdiv{
         display: flex;
         flex-direction: column;
@@ -364,7 +361,7 @@
         }
     }
 
-    /* coustomer review body */
+    coustomer review body
     .reviewcommetsdiv{
         display: flex;
         flex-direction: column;
@@ -380,4 +377,375 @@
             font-weight: 500;
         }
     }
+}  */
+
+.productidmainbody {
+    width: 100%;
+    height: auto; /* Allow the page to expand vertically */
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 1rem;
+    scroll-behavior: smooth; /* Global smooth scrolling */
+}
+
+/* Product display body */
+.productinformationbody {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Add some space between image and details */
+}
+
+.imagebody {
+    width: 50%; /* Adjust width to fit the content */
+    height: auto; /* Allow image body to adjust its height */
+    position: relative;
+
+    .image {
+        width: 100%;
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .tag, .sale {
+        position: absolute;
+        text-transform: capitalize;
+        font-weight: 600;
+        font-size: 20px;
+        background-color: #452e36;
+        color: #fff;
+        padding: 1rem;
+    }
+
+    .tag {
+        top: 10px;
+        right: 10px;
+    }
+
+    .sale {
+        bottom: 10px;
+        left: 10px;
+    }
+}
+
+.detailsbody {
+    width: 45%;
+    padding: 0 3rem;
+    height: auto; /* Allow details to expand */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.detailsbody .store, .detailsbody .name, .detailsbody .ratting {
+    display: block;
+}
+
+.detailsbody .orderedtimes, .detailsbody .amountdiv, .detailsbody .shoppinglink,
+.detailsbody .quantity, .detailsbody .specialoccasion, .detailsbody .cartbutton,
+.detailsbody .description, .detailsbody .share {
+    margin-top: 1rem;
+}
+
+.detailsbody .quantitybox {
+    width: 40%; /* Adjust width for quantity box */
+}
+
+.detailsbody .cartbutton {
+    display: flex;
+    gap: 10px;
+}
+
+.detailsbody .share {
+    cursor: pointer;
+}
+
+.cardcarouselbody {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 2rem;
+    width: 100%;
+}
+
+.detailsbody {
+    width: 45%;
+    height: calc(100vh - 180px); 
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .store {
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 22px;
+        letter-spacing: 2px;
+        cursor: pointer;
+    }
+
+    .store a:hover{
+        text-decoration: underline;
+    }
+
+    .name {
+        text-transform: capitalize;
+        letter-spacing: 2px;
+        font-size: 50px;
+        font-weight: 500;
+        color: #452e36;
+    }
+    .name:hover{
+        text-decoration: underline;
+    }
+
+    .ratting>a {
+        display: flex;
+        gap: 10px;
+        font-size: 25px;
+        align-items: center;
+        text-transform: capitalize;
+        letter-spacing: 1px;
+
+        .icons {
+            font-size: 40px;
+            color: #452e36;
+        }
+    }
+
+    .orderedtimes {
+        text-transform: capitalize;
+        letter-spacing: 2px;
+        font-size: 25px;
+        font-weight: 500;
+        text-align: center;
+        background-color: #452e36;
+        color: #fff;
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        -webkit-border-radius: 50px;
+        -moz-border-radius: 50px;
+        -ms-border-radius: 50px;
+        -o-border-radius: 50px;
+    }
+
+    .amountdiv {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        letter-spacing: 2px;
+
+        .oldamount {
+            text-decoration: line-through;
+            font-size: 30px;
+            font-weight: 200;
+        }
+
+        .newamount {
+            font-size: 40px;
+            font-weight: 600;
+        }
+
+        .sale {
+            text-transform: capitalize;
+            font-weight: 600;
+            background-color: #452e36;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            -webkit-border-radius: 50px;
+            -moz-border-radius: 50px;
+            -ms-border-radius: 50px;
+            -o-border-radius: 50px;
+        }
+    }
+
+    .shoppinglink {
+        text-transform: capitalize;
+        letter-spacing: 2px;
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    .shoppinglink:hover {
+        text-decoration: underline;
+    }
+
+    .quantity {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        .text {
+            text-transform: capitalize;
+            letter-spacing: 2px;
+            font-size: 25px;
+            font-weight: 500;
+        }
+
+        .quantitybox {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            border: 2px solid #452e36;
+            width: 50%;
+            user-select: none;
+
+            .quantitybutton {
+                border: none;
+                background: none;
+                cursor: pointer;
+                font-size: 35px;
+                padding: 0.5rem 2rem;
+                font-weight: 600;
+                outline: none;
+            }
+
+            .quantityvalue {
+                font-weight: 500;
+                font-size: 30px;
+            }
+        }
+    }
+
+    .specialoccasion {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .text {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 20px;
+            position: relative;
+        }
+
+        .occasionname {
+            font-size: 22px;
+            letter-spacing: 2px;
+            font-weight: 600;
+            text-transform: capitalize;
+        }
+
+        .icons {
+            font-size: 24px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .hovertext {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background-color: #452e36;
+            color: #fff;
+            padding: 1rem;
+            z-index: 1;
+            text-transform: capitalize;
+            letter-spacing: 1px;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            white-space: nowrap;
+        }
+
+        .icons:hover .hovertext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+
+        .occasionitem {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-transform: capitalize;
+            letter-spacing: 2px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+    }
+
+    .cartbutton {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        /* align-items: center; */
+
+         .text {
+            text-transform: capitalize;
+            letter-spacing: 2px;
+            font-size: 18px;
+            font-weight: 500;
+            color: rgba(69, 46, 54, 0.4);
+        }
+
+        .cart, .buy {
+            text-transform: capitalize;
+            letter-spacing: 1px;
+            font-size: 24px;
+            border: 2px solid #452e36;
+            padding: 1rem;
+            border-radius: 100px;
+            -webkit-border-radius: 100px;
+            -moz-border-radius: 100px;
+            -ms-border-radius: 100px;
+            -o-border-radius: 100px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .cart{
+            background: none;
+            color: #452e36;
+        }
+        .cart:hover{
+            background-color: #452e36;
+            color: #fff;
+        }
+        .buy{
+            background-color: #452e36;
+            color: #fff;
+        }
+    }
+
+    .description{
+        text-transform: capitalize;
+        letter-spacing: 2px;
+        font-size: 22px;
+        text-align: justify;
+        padding: 1rem;
+        user-select: none;
+    }
+
+    .share{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        text-transform: capitalize;
+        letter-spacing: 1px;
+        font-size: 20px;
+        font-weight: 600;
+        color: #452e36;
+        cursor: pointer;
+    }
+}
+
+
+
+.cardcarousel {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    overflow-x: scroll;
+}
+
+.reviewdiv, .reviewcommetsdiv {
+    width: 100%;
+    padding: 2rem;
 }
