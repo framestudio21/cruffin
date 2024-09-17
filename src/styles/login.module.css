@@ -1,0 +1,52 @@
+.loginsignupmainbody{
+    width: 100vw;
+    height: 100vh;
+    padding: 2rem;
+    background-color: #452e36;
+    position: relative;
+    user-select: none;
+
+    .backbtn{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        text-transform: capitalize;
+        letter-spacing: 2px;
+        color: #fff;
+        border: 2px dashed #fff;
+        padding: 1rem 1.5rem;
+        cursor: pointer;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+        font-weight: 500;
+}
+
+.backbtn:hover{
+    background-color: #fff;
+    border: 2px solid #fff;
+        color: #452e36;
+        font-weight: 700;
+
+        .icon{
+            font-weight: 900;
+        }
+}
+
+    .loginbody{
+        width: 40%;
+        height: 100%;
+        background-color: #fff;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+        padding: 1rem;
+        margin: auto;
+}
+}

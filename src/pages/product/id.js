@@ -211,7 +211,7 @@ export default function Id() {
       <Footer />
 
       {/* rating review div */}
-      <RatingReview/>
+      {/* <RatingReview/> */}
     </>
   );
 }

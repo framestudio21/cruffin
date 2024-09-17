@@ -6,12 +6,16 @@
   top: 0;
   left: 0;
   background-color: #452e36c8;
-  padding: 4rem;
+  padding: 0 4rem;
+  overflow: hidden;
+  user-select: none;
 
   .ratingreviewbody {
     background-color: #fff;
-    height: auto;
-    padding: 1.5rem;
+    height: 100%;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    padding: 3rem;
     width: 80%;
     margin: auto;
     display: flex;
@@ -38,7 +42,7 @@
 
     .bar {
       width: 100%;
-      height: 1px;
+      height: 2px;
       background-color: #452e36;
     }
 
@@ -46,6 +50,14 @@
       display: flex;
       gap: 15px;
       align-items: center;
+
+      .image{
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+}
 
       .namerate {
         display: flex;
@@ -74,5 +86,221 @@
         }
       }
     }
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+
+      .submitbtn {
+        letter-spacing: 2px;
+        font-weight: 600;
+        border: 2px dashed #452e36;
+        padding: 1rem 2rem;
+        text-transform: capitalize;
+        background: none;
+        cursor: pointer;
+        font-size: 20px;
+      }
+
+      .submitbtn:hover{
+        background-color: #452e36;
+        border: 2px solid #452e36;
+        color: #fff;
+      }
+
+      .reviewtitle {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .title {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          .name {
+            text-transform: capitalize;
+            font-weight: 700;
+            font-size: 22px;
+            letter-spacing: 2px;
+          }
+
+          .text {
+            font-weight: 800;
+            letter-spacing: 2px;
+            font-size: 22px;
+          }
+        }
+
+        .input {
+          height: 70px;
+          padding: 20px;
+          text-transform: capitalize;
+          letter-spacing: 1px;
+          font-weight: 600;
+          border: 2px dashed #ccc;
+          outline: none;
+          border-radius: 10px;
+          -webkit-border-radius: 10px;
+          -moz-border-radius: 10px;
+          -ms-border-radius: 10px;
+          -o-border-radius: 10px;
+        }
+        .textarea {
+          height: 220px;
+          padding: 20px;
+          text-transform: capitalize;
+          letter-spacing: 1px;
+          font-weight: 600;
+          outline: none;
+          width: 100%;
+          resize: none;
+          box-sizing: border-box;
+          border: 2px dashed #ccc;
+          text-align: justify;
+          border-radius: 10px;
+          -webkit-border-radius: 10px;
+          -moz-border-radius: 10px;
+          -ms-border-radius: 10px;
+          -o-border-radius: 10px;
+        }
+
+        .input:hover,
+        .textarea:hover {
+          border: 2px solid #452e36;
+        }
+
+        .errorMessage{
+          text-transform: capitalize;
+          letter-spacing: 1px;
+          color: red;
+          font-weight: 500;
+        }
+
+        .photoarea {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 15px;
+
+          .photoContainer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed #ccc;
+            padding: 5px;
+            border-radius: 10px;
+            width: 150px;
+            height: 150px;
+            position: relative;
+            cursor: pointer;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            -ms-border-radius: 10px;
+            -o-border-radius: 10px;
+          }
+
+          .photoContainer:hover {
+            border: 2px solid #452e36;
+          }
+
+          .uploadedImage {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            -ms-border-radius: 10px;
+            -o-border-radius: 10px;
+            cursor: pointer;
+          }
+
+          .photoLabel {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            -ms-border-radius: 10px;
+            -o-border-radius: 10px;
+            text-transform: capitalize;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-align: center;
+
+
+            .imageicon {
+              font-size: 50px;
+              color: #888;
+            }
+          }
+
+          .photoLabel span {
+            font-size: 0.9rem;
+            color: #888;
+          }
+
+          .icon {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: white;
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+          }
+
+          .photoName {
+            position: absolute;
+            bottom: -30px;
+            left: 0;
+            text-transform: capitalize;
+            font-weight: 600;
+            letter-spacing: 1px;
+            cursor: none;
+          }
+
+          .errorMessage {
+            position: absolute;
+            top: 0;
+            text-transform: capitalize;
+            letter-spacing: 2px;
+            font-weight: 600;
+            text-align: center;
+            left: 0;
+            color: red;
+            font-size: 1rem;
+            background-color: #ccc;
+            border-radius: 10px 10px 0 0;
+            -webkit-border-radius: 10px 10px 0 0;
+            -moz-border-radius: 10px 10px 0 0;
+            -ms-border-radius: 10px 10px 0 0;
+            -o-border-radius: 10px 10px 0 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .photoContainer {
+    width: 80px;
+    height: 80px;
+  }
+
+  .photoLabel {
+    width: 80px;
+    height: 80px;
+  }
+
+  .uploadedImage {
+    width: 100%;
+    height: 100%;
   }
 }
