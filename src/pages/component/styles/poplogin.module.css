@@ -1,0 +1,26 @@
+.poploginmainbody{
+    width: 100vw;
+    height: 100vh;
+    /* background-color: #452e36; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .poplogindiv{
+        width: 40%;
+        height: 60%;
+        padding: 2rem;
+        /* border: 2px dashed #452e36; */
+        background-color: #ccc;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+}
+}
