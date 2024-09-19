@@ -9,6 +9,7 @@ import Card from "./component/card";
 import NavBar from "./component/nav";
 import Footer from "./component/footer";
 import PopLogin from "./component/poplogin";
+import Cart from "./component/cart";
 
 export default function Home() {
   const { data: session, status } = useSession();
@@ -52,6 +53,7 @@ export default function Home() {
       <HeroCarousel/>
       <Footer/>
       <PopLogin/>
+      <Cart/>
     </>
   );
 }

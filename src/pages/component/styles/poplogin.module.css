@@ -1,26 +1,120 @@
-.poploginmainbody{
-    width: 100vw;
-    height: 100vh;
-    /* background-color: #452e36; */
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 9999;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.poploginmainbody {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity 0.5s ease;
 
-    .poplogindiv{
-        width: 40%;
-        height: 60%;
-        padding: 2rem;
-        /* border: 2px dashed #452e36; */
-        background-color: #ccc;
-        border-radius: 10px;
-        -webkit-border-radius: 10px;
-        -moz-border-radius: 10px;
-        -ms-border-radius: 10px;
-        -o-border-radius: 10px;
+  .poplogindiv {
+    width: 35%;
+    height: 60%;
+    padding: 2rem;
+    /* border: 2px dashed #452e36; */
+    background-color: #fff;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-between;
+
+    .titlediv {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .title {
+        text-transform: capitalize;
+        letter-spacing: 1px;
+        font-weight: 600;
+        color: #452e36;
+        font-size: 40px;
+        text-align: center;
+      }
+
+      .text {
+        text-transform: capitalize;
+        font-weight: 500;
+        color: #452e368d;
+        text-align: center;
+        font-size: 18px;
+      }
+    }
+
+    .btndiv {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 100%;
+      padding: 0 2rem;
+
+      .loginbtn,
+      .signupbtn {
+        padding: 15px;
+        border-radius: 50px;
+        -webkit-border-radius: 50px;
+        -moz-border-radius: 50px;
+        -ms-border-radius: 50px;
+        -o-border-radius: 50px;
+        outline: 3px solid transparent;
+        border: 3px dashed #ccc;
+        text-transform: capitalize;
+        letter-spacing: 2px;
+        font-weight: 500;
+        background: none;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      .loginbtn{
+        background-color: #452e36;
+        border: 3px solid #452e36;
+        color: #fff;
+      }
+
+      .loginbtn:hover{
+        border: 3px solid #fff;
+        outline: 2px solid #000;
+      }
+
+      .signupbtn:hover{
+        background-color: #452e36;
+        border: 3px solid #452e36;
+        color: #fff;
+      }
+
+    }
+
+    .staylogoutbtn{
+        border: none;
+        outline: none;
+        background: none;
+        font-weight: 500;
+        letter-spacing: 2px;
+        font-size: 15px;
+        text-transform: capitalize;
+        cursor: pointer;
+        color: #452e36c7;
+    }
+
+    .staylogoutbtn:hover{
+        text-decoration: underline;
+    }
+  }
 }
-}
+
+.poploginmainbody.hide {
+    opacity: 0;
+    pointer-events: none; /* Prevent interaction when hidden */
+  }
