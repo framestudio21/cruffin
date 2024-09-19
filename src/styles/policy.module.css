@@ -1,0 +1,125 @@
+.policymainbody{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+
+    .refundpolicybody{
+        width: 70%;
+        height: calc(100vh - 180px);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: space-evenly;
+        padding: 2rem;
+    }
+
+    .shippingbody{
+        width: 70%;
+        height: calc(100vh - 180px);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: space-evenly;
+        padding: 2rem;
+    }
+
+    .termsbody, .privacybody{
+        width: 70%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        gap: 70px;
+        padding: 4rem;
+    }
+    
+    .contactbody{
+        width: 60%;
+        height: calc(100vh - 180px);
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+        justify-content: center;        
+    }
+
+    .heading{
+        letter-spacing: 2px;
+        font-weight: 700;
+        font-size: 50px;
+        color: #452e36;
+        text-transform: capitalize;
+        text-align: center;
+    }
+
+    .title{
+        text-transform: capitalize;
+        letter-spacing: 2px;
+        color: #452e36d4;
+        font-weight: 600;
+        font-size: 30px;
+    }
+
+    .policies{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;        
+    }
+    .uldiv{
+        padding-left: 40px;
+        list-style-type: disc;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        .lidiv{
+            text-transform: capitalize;
+            letter-spacing: 1px;
+            text-align: justify;
+            font-weight: 500;
+            font-size: 20px;
+        }
+
+        .sublidiv{
+            list-style-type: none;
+            text-transform: capitalize;
+            letter-spacing: 1px;
+            text-align: justify;
+            font-weight: 700;
+            font-size: 20px;
+        }
+    }
+
+    .text{
+        text-transform: capitalize;
+        letter-spacing: 1px;
+        font-weight: 500;
+        font-size: 20px;
+        text-align: justify;
+    }
+
+    .paragraphdiv{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .tablediv{
+        border: 2px dashed #452e36;
+
+        .thdiv{
+            padding: 1rem;
+            font-size: 20px;
+            border-bottom: 2px dashed #452e36;
+        }
+
+        .tddiv{
+            padding: 2rem;
+            font-size: 20px;
+        }
+    }
+}

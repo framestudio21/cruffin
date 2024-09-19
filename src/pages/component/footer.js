@@ -27,7 +27,7 @@ export default function Footer() {
               <div className={Styles.text}><span>e-mail :</span>cruffin.premium@gmail.com</div>
               <div className={Styles.text}><span>operating hours :</span>24 * 7</div>
             <ul>
-              <li><Link href="#">refund policy</Link></li>
+              <li><Link href="/refundpolicy">refund policy</Link></li>
            <li> <Link href="#">privacy policy</Link></li>
            <li> <Link href="#">terms of services</Link></li>
           <li>  <Link href="#">shipping policy</Link></li>
