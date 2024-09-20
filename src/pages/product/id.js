@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -15,6 +15,49 @@ import RatingReview from '../component/ratingReview';
 import Styles from "@/styles/id.module.css";
 
 export default function Id() {
+
+  const detailsRef = useRef(null); // Reference to the details section
+  const productMainBodyRef = useRef(null); // Reference to the entire main body
+  const [detailsAtBottom, setDetailsAtBottom] = useState(false); // State to track if details section is at the bottom
+
+  const handleScroll = () => {
+    const details = detailsRef.current;
+
+    // Check if the details section is at the bottom
+    if (details.scrollTop + details.clientHeight >= details.scrollHeight) {
+      setDetailsAtBottom(true);
+    } else {
+      setDetailsAtBottom(false);
+    }
+  };
+
+  const handleProductMainScroll = (e) => {
+    const productMainBody = productMainBodyRef.current;
+
+    // If the details section is not at the bottom, prevent main body scroll
+    if (!detailsAtBottom) {
+      productMainBody.scrollTop = 0;
+    }
+  };
+
+  useEffect(() => {
+    const details = detailsRef.current;
+    const productMainBody = productMainBodyRef.current;
+
+    // Add scroll listener to details section
+    details.addEventListener('scroll', handleScroll);
+
+    // Add scroll listener to product main body
+    productMainBody.addEventListener('scroll', handleProductMainScroll);
+
+    return () => {
+      // Cleanup listeners
+      details.removeEventListener('scroll', handleScroll);
+      productMainBody.removeEventListener('scroll', handleProductMainScroll);
+    };
+  }, [detailsAtBottom]);
+
+
   const [quantity, setQuantity] = useState(1);
 
   // const { setProductDetails, setIsPopupVisible } = useProduct();
@@ -117,7 +160,7 @@ export default function Id() {
   return (
     <>
       <Nav />
-      <div className={Styles.productidmainbody}>
+      <div ref={productMainBodyRef} className={Styles.productidmainbody} >
 
         {/* Product information */}
         <div className={Styles.productinformationbody}>
@@ -126,7 +169,7 @@ export default function Id() {
             <div className={Styles.tag}>summer special</div>
             <div className={Styles.sale}>for sale</div>
           </div>
-          <div className={Styles.detailsbody}>
+          <div ref={detailsRef} className={Styles.detailsbody} >
             <div className={Styles.store}>
               <Link href="#">My store</Link> {` > `}
               <Link href="#">cruffin</Link>

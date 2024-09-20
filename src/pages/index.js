@@ -10,6 +10,8 @@ import NavBar from "./component/nav";
 import Footer from "./component/footer";
 import PopLogin from "./component/poplogin";
 import Cart from "./component/cart";
+import Login from "./component/login";
+import LoginOtpVerify from "./component/loginotpverify";
 
 export default function Home() {
   const { data: session, status } = useSession();
@@ -52,8 +54,10 @@ export default function Home() {
       <NavBar/>
       <HeroCarousel/>
       <Footer/>
-      <PopLogin/>
-      <Cart/>
+      {/* <PopLogin/> */}
+      {/* <Login/> */}
+      <LoginOtpVerify/>
+      {/* <Cart/> */}
     </>
   );
 }

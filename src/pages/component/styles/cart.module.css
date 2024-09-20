@@ -89,7 +89,7 @@
       }
 
       .shoppingbtn {
-        padding: 0.7rem 2rem;
+        padding: 1rem 3rem;
         letter-spacing: 2px;
         text-transform: capitalize;
         font-weight: 600;
@@ -99,16 +99,15 @@
         -moz-border-radius: 50px;
         -ms-border-radius: 50px;
         -o-border-radius: 50px;
-        outline: 2px solid transparent;
-        border: 3px solid transparent;
-        background-color: #452e36;
-        color: #fff;
+        background-color: #ccc;
+        color: #452e36;
         cursor: pointer;
+        border: none;
       }
 
       .shoppingbtn:hover{
-        border: 3px solid #fff;
-        outline: 2px solid #452e36;
+       background-color: #452e36;
+       color: #fff;
       }
     }
   }

@@ -46,16 +46,16 @@
       .text {
         text-transform: capitalize;
         font-weight: 500;
-        color: #452e368d;
+        color: #b6b6b6;
         text-align: center;
-        font-size: 18px;
+        /* font-size: 18px; */
       }
     }
 
     .btndiv {
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      gap: 20px;
       width: 100%;
       padding: 0 2rem;
 
@@ -68,7 +68,7 @@
         -ms-border-radius: 50px;
         -o-border-radius: 50px;
         outline: 3px solid transparent;
-        border: 3px dashed #ccc;
+        border: 3px solid #ccc;
         text-transform: capitalize;
         letter-spacing: 2px;
         font-weight: 500;
@@ -78,19 +78,21 @@
       }
 
       .loginbtn{
-        background-color: #452e36;
-        border: 3px solid #452e36;
-        color: #fff;
+        background-color: #ccc;
+        border: 3px solid transparent;
+        color: #452e36;
       }
 
       .loginbtn:hover{
-        border: 3px solid #fff;
-        outline: 2px solid #000;
+        /* border: 3px solid #fff; */
+        /* outline: 2px solid #452e36; */
+        background-color: #452e36;
+        color: #fff;
       }
 
       .signupbtn:hover{
         background-color: #452e36;
-        border: 3px solid #452e36;
+        border: 3px solid transparent;
         color: #fff;
       }
 
@@ -105,7 +107,7 @@
         font-size: 15px;
         text-transform: capitalize;
         cursor: pointer;
-        color: #452e36c7;
+        color: #452e36;
     }
 
     .staylogoutbtn:hover{
