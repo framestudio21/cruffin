@@ -1,4 +1,5 @@
-.loginmainbody, .loginotpverifymainbody {
+.loginmainbody,
+.loginotpverifymainbody, .signupmainbody {
   width: 100vw;
   height: 100vh;
   position: absolute;
@@ -10,7 +11,8 @@
   justify-content: center;
   user-select: none;
 
-  .loginbody, .loginotpverifybody {
+  .loginbody,
+  .loginotpverifybody, .signupbody {
     width: 40%;
     height: 70%;
     background-color: #fff;
@@ -26,9 +28,7 @@
     justify-content: space-between;
     color: #452e36;
 
-
     .topsection {
-
       .titlesection {
         display: flex;
         align-items: center;
@@ -48,7 +48,8 @@
         }
       }
 
-      .text, .text1 {
+      .text,
+      .text1 {
         text-transform: capitalize;
         letter-spacing: 1px;
         font-size: 20px;
@@ -57,7 +58,7 @@
         font-size: 16px;
       }
 
-      .text1{
+      .text1 {
         height: 50px;
         display: flex;
         align-items: center;
@@ -65,20 +66,20 @@
         gap: 20px;
         color: #452e36;
 
-        .emailtext{
-            text-transform: lowercase;
-            font-weight: 600;
-            letter-spacing: 2px;
+        .emailtext {
+          text-transform: lowercase;
+          font-weight: 600;
+          letter-spacing: 2px;
         }
 
-        .edittext{
-            color: gold;
-            font-weight: 700;
-            cursor: pointer;
+        .edittext {
+          color: gold;
+          font-weight: 700;
+          cursor: pointer;
         }
 
-        .edittext:hover{
-            text-decoration: underline;
+        .edittext:hover {
+          text-decoration: underline;
         }
       }
     }
@@ -95,7 +96,7 @@
       -o-border-radius: 10px;
       padding: 2rem 1.5rem;
 
-      .timerdiv{
+      .timerdiv {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -105,135 +106,181 @@
         font-weight: 500;
         text-transform: capitalize;
 
-        .vbar{
-            width: 1px;
-            height: 100%;
-            background-color: #452e36;
+        .vbar {
+          width: 1px;
+          height: 100%;
+          background-color: #452e36;
         }
 
-        .timer{
-            letter-spacing: 2px;
-            font-weight: 700;
+        .timer {
+          letter-spacing: 2px;
+          font-weight: 700;
         }
 
-        .resendotp{
-            cursor: pointer;
+        .resendotp {
+          cursor: pointer;
         }
-        
-        .resendotp:hover{
-            text-decoration: underline;
+
+        .resendotp:hover {
+          text-decoration: underline;
         }
       }
 
       .fielddiv {
         display: flex;
         flex-direction: column;
+        gap: 10px;
 
-        .label{
-            text-transform: lowercase;
-            font-weight: 600;
-            letter-spacing: 2px;
-            font-size: 16px;
-            /* text-align: center; */
-            height: 35px;
+        .label {
+          text-transform: lowercase;
+          font-weight: 600;
+          letter-spacing: 2px;
+          font-size: 16px;
+          /* text-align: center; */
+          height: 35px;
         }
 
-        .inputfield{
-            padding: 1rem 2rem;
-            outline: none;
-            border: 2px dashed #452e36;
-            border-radius: 50px;
-            -webkit-border-radius: 50px;
-            -moz-border-radius: 50px;
-            -ms-border-radius: 50px;
-            -o-border-radius: 50px;
-            background-color: #ccc;
-            letter-spacing: 2px;
-            font-weight: 500;
-            text-transform: lowercase;
+        .inputfield {
+          padding: 1rem 2rem;
+          outline: none;
+          border: 2px dashed #452e36;
+          border-radius: 50px;
+          -webkit-border-radius: 50px;
+          -moz-border-radius: 50px;
+          -ms-border-radius: 50px;
+          -o-border-radius: 50px;
+          background-color: #ccc;
+          letter-spacing: 2px;
+          font-weight: 500;
+          text-transform: lowercase;
+          color: #452e36;
+          cursor: text;
+        }
+
+        .inputfield:hover {
+          border: 2px solid #452e36;
+          background-color: #fff;
+        }
+
+        .inputfield:focus {
+          border: 2px solid #452e36;
+          background-color: #fff;
+        }
+
+        .orbardiv{
+          display: flex;
+          gap: 10px;
+          align-items: center;
+
+          .bar{
+            border: 2px dashed #452e3674;
+            height: 1px;
+            width: 50%;
+          }
+
+          .or{
+            text-transform: capitalize;
             color: #452e36;
-            cursor: text;
-}
+            letter-spacing: 2px;
+            font-weight: 600;
+          }
+        }
 
-.inputfield:hover{
-    border: 2px solid #452e36;
-    background-color: #fff;
-}
+        .submitbtn {
+          padding: 15px;
+          border-radius: 50px;
+          -webkit-border-radius: 50px;
+          -moz-border-radius: 50px;
+          -ms-border-radius: 50px;
+          -o-border-radius: 50px;
+          outline: none;
+          border: none;
+          text-transform: capitalize;
+          letter-spacing: 2px;
+          font-weight: 600;
+          background: none;
+          cursor: pointer;
+          font-size: 16px;
+          background-color: #b6b6b6;
+          border: 3px solid transparent;
+          color: #452e36;
 
-.inputfield:focus{
-    border: 2px solid #452e36;
-    background-color: #fff;
-}
-
-        
-      .submitbtn {
-        padding: 15px;
-        border-radius: 50px;
-        -webkit-border-radius: 50px;
-        -moz-border-radius: 50px;
-        -ms-border-radius: 50px;
-        -o-border-radius: 50px;
-        outline: none;
-        border: none;
-        text-transform: capitalize;
-        letter-spacing: 2px;
-        font-weight: 600;
-        background: none;
-        cursor: pointer;
-        font-size: 16px;
-        background-color: #b6b6b6;
-        border: 3px solid transparent;
-        color: #452e36;
-
-        .btnspan{
+          .btnspan {
             text-transform: uppercase;
+          }
+        }
+
+        .googlediv {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 10px 2rem;
+          border-radius: 50px;
+          -webkit-border-radius: 50px;
+          -moz-border-radius: 50px;
+          -ms-border-radius: 50px;
+          -o-border-radius: 50px;
+          outline: none;
+          border: none;
+          text-transform: capitalize;
+          letter-spacing: 2px;
+          font-weight: 600;
+          background: none;
+          cursor: pointer;
+          font-size: 16px;
+          background-color: #b6b6b6;
+          border: 3px solid transparent;
+          color: #452e36;
+        }
+
+        .googlediv:hover{
+          color: #fff;
+          background-color: #452e36;
+        }
+
+        .submitbtn:hover {
+          background-color: #452e36;
+          color: #fff;
         }
       }
 
-      .submitbtn:hover{
-        background-color: #452e36;
-        color: #fff;
-      }
-      }
-
-      .textfielddiv{
+      .textfielddiv {
         text-transform: capitalize;
         letter-spacing: 1px;
         font-weight: 600;
         font-size: 16px;
         text-align: center;
 
-        .link{
-            cursor: pointer;
-            font-weight: 800;
+        .link {
+          cursor: pointer;
+          font-weight: 800;
         }
 
-        .link:hover{
-            text-decoration: underline;
+        .link:hover {
+          text-decoration: underline;
         }
       }
-
-
     }
 
-    .staylogoutbtn{
-        border: none;
-        outline: none;
-        background: none;
-        font-weight: 500;
-        letter-spacing: 2px;
-        font-size: 15px;
-        text-transform: capitalize;
-        cursor: pointer;
-        color: #452e36;
+    .staylogoutbtn {
+      border: none;
+      outline: none;
+      background: none;
+      font-weight: 500;
+      letter-spacing: 2px;
+      font-size: 15px;
+      text-transform: capitalize;
+      cursor: pointer;
+      color: #452e36;
     }
 
-    .staylogoutbtn:hover{
-        text-decoration: underline;
+    .staylogoutbtn:hover {
+      text-decoration: underline;
     }
   }
 
-  .loginotpverifybody{
+  .loginbody,
+  .loginotpverifybody, .signupbody {
     height: auto;
     gap: 15px;
   }

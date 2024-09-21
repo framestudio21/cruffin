@@ -1,0 +1,398 @@
+.popmainbody {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    user-select: none;
+  
+    .popdiv {
+      width: 35%;
+      height: 60%;
+      padding: 2rem;
+      /* border: 2px dashed #452e36; */
+      background-color: #fff;
+      border-radius: 10px;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      justify-content: space-between;
+  
+      .titlediv {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+  
+        .title {
+          text-transform: capitalize;
+          letter-spacing: 1px;
+          font-weight: 600;
+          color: #452e36;
+          font-size: 40px;
+          text-align: center;
+        }
+  
+        .text {
+          text-transform: capitalize;
+          font-weight: 500;
+          color: #b6b6b6;
+          text-align: center;
+          /* font-size: 18px; */
+        }
+      }
+  
+      .btndiv {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        padding: 0 2rem;
+  
+        .loginbtn,
+        .signupbtn {
+          padding: 15px;
+          border-radius: 50px;
+          -webkit-border-radius: 50px;
+          -moz-border-radius: 50px;
+          -ms-border-radius: 50px;
+          -o-border-radius: 50px;
+          outline: 3px solid transparent;
+          border: 3px solid #ccc;
+          text-transform: capitalize;
+          letter-spacing: 2px;
+          font-weight: 500;
+          background: none;
+          cursor: pointer;
+          font-size: 16px;
+        }
+  
+        .loginbtn{
+          background-color: #ccc;
+          border: 3px solid transparent;
+          color: #452e36;
+        }
+  
+        .loginbtn:hover{
+          /* border: 3px solid #fff; */
+          /* outline: 2px solid #452e36; */
+          background-color: #452e36;
+          color: #fff;
+        }
+  
+        .signupbtn:hover{
+          background-color: #452e36;
+          border: 3px solid transparent;
+          color: #fff;
+        }
+  
+      }
+  
+      .staylogoutbtn{
+          border: none;
+          outline: none;
+          background: none;
+          font-weight: 500;
+          letter-spacing: 2px;
+          font-size: 15px;
+          text-transform: capitalize;
+          cursor: pointer;
+          color: #452e36;
+      }
+  
+      .staylogoutbtn:hover{
+          text-decoration: underline;
+      }
+    }
+
+    .loginbody,
+    .loginotpverifybody, .signupbody {
+      width: 40%;
+      height: 70%;
+      background-color: #fff;
+      border-radius: 10px;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      justify-content: space-between;
+      color: #452e36;
+  
+      .topsection {
+        .titlesection {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+  
+          .title {
+            text-transform: capitalize;
+            letter-spacing: 2px;
+            font-weight: 700;
+            font-size: 30px;
+          }
+  
+          .icon {
+            font-weight: 700;
+            font-size: 30px;
+            cursor: pointer;
+          }
+        }
+  
+        .text,
+        .text1 {
+          text-transform: capitalize;
+          letter-spacing: 1px;
+          font-size: 20px;
+          font-weight: 500;
+          color: #b6b6b6;
+          font-size: 16px;
+        }
+  
+        .text1 {
+          height: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 20px;
+          color: #452e36;
+  
+          .emailtext {
+            text-transform: lowercase;
+            font-weight: 600;
+            letter-spacing: 2px;
+          }
+  
+          .edittext {
+            color: gold;
+            font-weight: 700;
+            cursor: pointer;
+          }
+  
+          .edittext:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+  
+      .middleformsection {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        background-color: #ccc;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+        padding: 2rem 1.5rem;
+  
+        .timerdiv {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          height: 20px;
+          letter-spacing: 1px;
+          font-weight: 500;
+          text-transform: capitalize;
+  
+          .vbar {
+            width: 1px;
+            height: 100%;
+            background-color: #452e36;
+          }
+  
+          .timer {
+            letter-spacing: 2px;
+            font-weight: 700;
+          }
+  
+          .resendotp {
+            cursor: pointer;
+          }
+  
+          .resendotp:hover {
+            text-decoration: underline;
+          }
+        }
+  
+        .fielddiv {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+  
+          .label {
+            text-transform: lowercase;
+            font-weight: 600;
+            letter-spacing: 2px;
+            font-size: 16px;
+            /* text-align: center; */
+            height: 35px;
+          }
+  
+          .inputfield {
+            padding: 1rem 2rem;
+            outline: none;
+            border: 2px dashed #452e36;
+            border-radius: 50px;
+            -webkit-border-radius: 50px;
+            -moz-border-radius: 50px;
+            -ms-border-radius: 50px;
+            -o-border-radius: 50px;
+            background-color: #ccc;
+            letter-spacing: 2px;
+            font-weight: 500;
+            text-transform: lowercase;
+            color: #452e36;
+            cursor: text;
+          }
+  
+          .inputfield:hover {
+            border: 2px solid #452e36;
+            background-color: #fff;
+          }
+  
+          .inputfield:focus {
+            border: 2px solid #452e36;
+            background-color: #fff;
+          }
+  
+          .orbardiv{
+            display: flex;
+            gap: 10px;
+            align-items: center;
+  
+            .bar{
+              border: 2px dashed #452e3674;
+              height: 1px;
+              width: 50%;
+            }
+  
+            .or{
+              text-transform: capitalize;
+              color: #452e36;
+              letter-spacing: 2px;
+              font-weight: 600;
+            }
+          }
+  
+          .submitbtn {
+            padding: 15px;
+            border-radius: 50px;
+            -webkit-border-radius: 50px;
+            -moz-border-radius: 50px;
+            -ms-border-radius: 50px;
+            -o-border-radius: 50px;
+            outline: none;
+            border: none;
+            text-transform: capitalize;
+            letter-spacing: 2px;
+            font-weight: 600;
+            background: none;
+            cursor: pointer;
+            font-size: 16px;
+            background-color: #b6b6b6;
+            border: 3px solid transparent;
+            color: #452e36;
+  
+            .btnspan {
+              text-transform: uppercase;
+            }
+          }
+  
+          .googlediv {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 2rem;
+            border-radius: 50px;
+            -webkit-border-radius: 50px;
+            -moz-border-radius: 50px;
+            -ms-border-radius: 50px;
+            -o-border-radius: 50px;
+            outline: none;
+            border: none;
+            text-transform: capitalize;
+            letter-spacing: 2px;
+            font-weight: 600;
+            background: none;
+            cursor: pointer;
+            font-size: 16px;
+            background-color: #b6b6b6;
+            border: 3px solid transparent;
+            color: #452e36;
+          }
+  
+          .googlediv:hover{
+            color: #fff;
+            background-color: #452e36;
+          }
+  
+          .submitbtn:hover {
+            background-color: #452e36;
+            color: #fff;
+          }
+        }
+  
+        .textfielddiv {
+          text-transform: capitalize;
+          letter-spacing: 1px;
+          font-weight: 600;
+          font-size: 16px;
+          text-align: center;
+  
+          .link {
+            cursor: pointer;
+            font-weight: 800;
+          }
+  
+          .link:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+  
+      .staylogoutbtn {
+        border: none;
+        outline: none;
+        background: none;
+        font-weight: 500;
+        letter-spacing: 2px;
+        font-size: 15px;
+        text-transform: capitalize;
+        cursor: pointer;
+        color: #452e36;
+      }
+  
+      .staylogoutbtn:hover {
+        text-decoration: underline;
+      }
+    }
+  
+    .loginbody,
+    .loginotpverifybody, .signupbody {
+      height: auto;
+      gap: 15px;
+    }
+  }
+  
+  .popmainbody.hide {
+      opacity: 0;
+      pointer-events: none; /* Prevent interaction when hidden */
+    }
+  

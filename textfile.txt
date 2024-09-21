@@ -1,0 +1,56 @@
+user come to the home page after 3s later open pop.js 
+component, when user click on login button then display
+ the logindiv body and when user click on create account 
+ then open signupdiv body. in the logindiv body after 
+ entering the email address then check the email address
+  valid or not and also check that it valid gmail 
+  account or not and show a text under inputfield 
+  "please enter a vlid email address" or
+   "email address is verified", 
+   then the sent otp button clickable thereafter click
+    on sent otp button then logindiv body become close
+     and user transfer to loginotpverifydiv body to 
+     submit the otp. the otp sent which 6 digit numaric
+      code which sent to the user logindiv body email
+       addres by nodemailer. check the otp and show 
+       the otp ih valid and continue button become 
+       clickable and if the otp not match with the 
+       sent otp the user email then under inputfield show
+        a text "otp is not matched", if the otp is matched
+         then show "otp verified". the otp is valid for 
+         only 10min and the 10min timer shows in timer div 
+         after 10min the resent the otp (resendotp) become 
+         clickable and after click on resend the otp then sent 
+         the mail id a new otp. on the click on edit button under
+          edittext div the user sent to the logindiv body 
+          display to the write a new email address or recheck 
+          the email address then sent a new otp to the email 
+          address to the new email address. the email address 
+          are show in loginotpverifydiv body in emailtext div. 
+          in the logindiv body or logotpverifydiv body click the 
+          continue with google the user can login or signup by 
+          the google. After clicking the create a account button 
+          in popdiv body then the user sent to the signupdiv body.
+           click in continue with google user login or signup by 
+           the google account and take all the data name, email 
+           and image of the user, if the user enter his name and 
+           enter his email address then check the email addres 
+           this is valid gamil account or not after checking email 
+           under email inputfield show a text "email verified" if 
+           not matched "email is not valid" and sent otp button 
+           become clickable. after click send otp button user 
+           sent to the loginotpverifydiv body and sent a 6 
+           digit otp to the user in the email id which user 
+           define in the signupdiv body email input field. 
+           in loginotpverifydiv body check the otp is valid 
+           or not and after click on continue the user become
+            login or signup. on click on the continue with 
+            google then the user can by login by the google 
+            account for all the component logindiv body and 
+            signupdiv body help by nextauth . also nodemailer
+             to sent a mail to the user email address which 
+             state the otp with a subject matter and body
+              with otp etc in nextjs. in the from the email 
+              and name otp all are store in the fromdata for 
+              further verification and the from data show in 
+              console log.

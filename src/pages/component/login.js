@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 import styles from "./styles/login.module.css";
 export default function Login() {
@@ -35,6 +36,25 @@ export default function Login() {
             <div className={styles.fielddiv}>
               <button type="submit" className={styles.submitbtn}>
                 send <span className={styles.btnspan}>otp</span>
+              </button>
+            </div>
+            <div className={styles.fielddiv}>
+              <div className={styles.orbardiv}>
+                <div className={styles.bar}></div>
+                <div className={styles.or}>or</div>
+                <div className={styles.bar}></div>
+              </div>
+            </div>
+            <div className={styles.fielddiv}>
+              <button className={styles.googlediv}>
+                continue with google
+                <Image
+                    src="/image/google-icon.svg"
+                    width={35}
+                    height={35}
+                    alt="google-icon"
+                    className={styles.imageicon}
+                  />
               </button>
             </div>
             <div className={styles.textfielddiv}>

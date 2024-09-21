@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";  // Next.js Image component
 import { useSession } from 'next-auth/react';
 import localFont from "next/font/local";
+
 import Styles from "@/styles/Home.module.css";
 
 import HeroCarousel from "./component/herocarousel";
@@ -12,6 +13,8 @@ import PopLogin from "./component/poplogin";
 import Cart from "./component/cart";
 import Login from "./component/login";
 import LoginOtpVerify from "./component/loginotpverify";
+import SignUp from "./component/signup";
+import Pop from "./component/pop";
 
 export default function Home() {
   const { data: session, status } = useSession();
@@ -52,12 +55,15 @@ export default function Home() {
       </div> */}
 
       <NavBar/>
-      <HeroCarousel/>
+      {/* <HeroCarousel/> */}
       <Footer/>
       {/* <PopLogin/> */}
       {/* <Login/> */}
-      <LoginOtpVerify/>
+      {/* <LoginOtpVerify/> */}
       {/* <Cart/> */}
+      {/* <SignUp/> */}
+      <Pop/>
+
     </>
   );
 }

@@ -1,8 +1,23 @@
 import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
+
+import Login from './login';
+import SignUp from './signup';
+
 import styles from './styles/poplogin.module.css';
 
 export default function PopLogin() {
   const [isVisible, setIsVisible] = useState(true);
+
+    const router = useRouter();  // Router hook
+
+  const handleLogin = () => {
+    router.push('<Login/>'); // Navigate to Login.js
+  };
+
+  const handleSignUp = () => {
+    router.push('<Signup/>'); // Navigate to SignUp.js
+  };
 
   // Hide the popup on button click and store in localStorage
   const handleStayLogout = () => {
@@ -38,8 +53,8 @@ export default function PopLogin() {
               </div>
             </div>
             <div className={styles.btndiv}>
-              <button className={styles.loginbtn}>Log In</button>
-              <button className={styles.signupbtn}>Create Account</button>
+            <button className={styles.loginbtn} onClick={handleLogin}>Log In</button>
+            <button className={styles.signupbtn} onClick={handleSignUp}>Create Account</button>
             </div>
             <button className={styles.staylogoutbtn} onClick={handleStayLogout}>
               Stay Logged Out

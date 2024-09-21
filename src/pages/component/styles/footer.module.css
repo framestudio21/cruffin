@@ -1,7 +1,7 @@
 .footerbody{
     width: 100%;
-    height: auto;
-    max-height: calc(100vh - 180px);
+    /* height: auto; */
+    height: calc(100vh - 190px);
     background-color: #452e36;
     color: #fff;
     display: flex;
@@ -10,7 +10,7 @@
     gap: 20px;
     padding: 2rem 1.7rem;
     user-select: none;
-    /* margin-top: 10px; */
+    margin-top: 10px;
 
     .bar{
         width: 100%;
