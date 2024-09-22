@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
+import axios from "axios";
 
 import styles from "./styles/pop.module.css";
 
@@ -21,6 +22,10 @@ export default function Pop() {
   const router = useRouter();
   const [timer, setTimer] = useState(120); // 600 seconds = 10 minutes
   const [canResendOtp, setCanResendOtp] = useState(false);
+  const [otpSent, setOtpSent] = useState(false);
+  const [otpVerified, setOtpVerified] = useState(false);
+  const [otpMessage, setOtpMessage] = useState("");
+  const [isSendingOtp, setIsSendingOtp] = useState(false);
 
   useEffect(() => {
     if (Object.keys(formData).length > 0) {
@@ -173,6 +178,39 @@ export default function Pop() {
    // Function to handle editing email, redirects to login or signup
    const handleEditEmail = () => {
     setActiveComponent(previousComponent); // Go back to the previous form
+  };
+
+  const handleSendOtp = async (e) => {
+    e.preventDefault();
+    setIsSendingOtp(true);
+    try {
+      const res = await axios.post('/api/send-otp', { email: formData.email });
+      if (res.status === 200) {
+        setOtpSent(true);
+        setOtpMessage("OTP sent to your email.");
+      }
+    } catch (error) {
+      console.error(error);
+      setOtpMessage("Failed to send OTP.");
+    } finally {
+      setIsSendingOtp(false);
+    }
+  };
+
+  const handleVerifyOtp = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.post('/api/verify-otp', {
+        email: formData.email,
+        otp: formData.otp,
+      });
+      if (res.status === 200) {
+        setOtpVerified(true);
+        setOtpMessage("OTP matched.");
+      }
+    } catch (error) {
+      setOtpMessage("OTP did not match. Please try again.");
+    }
   };
 
   return (
@@ -422,23 +460,28 @@ export default function Pop() {
                   </div>
                   </div>
 
-                  <form className={styles.middleformsection}>
+                  <form className={styles.middleformsection} onSubmit={otpSent ? handleVerifyOtp : handleSendOtp}>
                     <div className={styles.fielddiv}>
-                      <input
-                        type="text"
-                        placeholder="Enter OTP"
-                        value={formData.otp}
-                        onChange={handleOTPChange}
-                        className={styles.inputfield}
-                      />
+                     { otpSent && (
+                       <input
+                       type="number"
+                       placeholder="Enter OTP"
+                       value={formData.otp}
+                       onChange={handleOTPChange}
+                       className={styles.inputfield}
+                     />
+                     )}
                     </div>
+                    {otpMessage && <p>{otpMessage}</p>}
                     <div className={styles.fielddiv}>
                       <button
                         type="submit"
                         className={styles.submitbtn}
                         onClick={handleSubmit}
+                        disabled={isSendingOtp}
                       >
-                        Verify OTP
+                       {otpSent ? "Verify OTP" : "Send OTP"}
+                       {/* verify otp */}
                       </button>
                     </div>
 
