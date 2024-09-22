@@ -13,6 +13,42 @@
     opacity: 1;
     transition: opacity 0.5s ease;
     user-select: none;
+
+    .userInfo{
+      background-color: #ccc;
+      color:#452e36;
+      padding: 2rem;
+      font-size: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: 10px;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
+      font-weight: 600;
+      letter-spacing: 1px;
+
+      .submitbtn{
+        border: none;
+        outline: none;
+        border-radius: 50px;
+        -webkit-border-radius: 50px;
+        -moz-border-radius: 50px;
+        -ms-border-radius: 50px;
+        -o-border-radius: 50px;
+        padding: 0.5rem 2.5rem;
+        text-transform: capitalize;
+        letter-spacing: 2px;
+        font-weight: 500;
+        font-size: 18px;
+        cursor: pointer;
+
+}
+}
   
     .popdiv {
       width: 35%;
@@ -117,7 +153,7 @@
     }
 
     .loginbody,
-    .loginotpverifybody, .signupbody {
+    .otpbody, .signupbody {
       width: 40%;
       height: 70%;
       background-color: #fff;
@@ -181,6 +217,12 @@
             color: gold;
             font-weight: 700;
             cursor: pointer;
+            border: none;
+            outline: none;
+            background: none;
+            text-transform: capitalize;
+            font-size: 20px;
+            letter-spacing: 1px;
           }
   
           .edittext:hover {
@@ -188,11 +230,12 @@
           }
         }
       }
+
   
       .middleformsection {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 15px;
         background-color: #ccc;
         border-radius: 10px;
         -webkit-border-radius: 10px;
@@ -204,31 +247,28 @@
         .timerdiv {
           display: flex;
           align-items: center;
-          justify-content: center;
-          gap: 10px;
-          height: 20px;
-          letter-spacing: 1px;
-          font-weight: 500;
+          justify-content: center;  
+          padding: 20px;      
+        }
+
+        .resendotpbtn{
+          padding: 0.5rem 2.5rem;
+          border-radius: 50px;
+          -webkit-border-radius: 50px;
+          -moz-border-radius: 50px;
+          -ms-border-radius: 50px;
+          -o-border-radius: 50px;
+          outline: none;
+          border: none;
           text-transform: capitalize;
-  
-          .vbar {
-            width: 1px;
-            height: 100%;
-            background-color: #452e36;
-          }
-  
-          .timer {
-            letter-spacing: 2px;
-            font-weight: 700;
-          }
-  
-          .resendotp {
-            cursor: pointer;
-          }
-  
-          .resendotp:hover {
-            text-decoration: underline;
-          }
+          letter-spacing: 2px;
+          font-weight: 600;
+          background: none;
+          cursor: pointer;
+          font-size: 16px;
+          background-color: #452e36;
+          border: 3px solid transparent;
+          color: #fff;
         }
   
         .fielddiv {
@@ -385,7 +425,7 @@
     }
   
     .loginbody,
-    .loginotpverifybody, .signupbody {
+    .otpbody, .signupbody {
       height: auto;
       gap: 15px;
     }
