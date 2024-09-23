@@ -58,8 +58,7 @@ export default function Id() {
   }, [detailsAtBottom]);
 
 
-  const [quantity, setQuantity] = useState(1);
-
+  
   // const { setProductDetails, setIsPopupVisible } = useProduct();
   // const { setProductDetails, setIsPopupVisible } = useContext(ProductContext);  // Get context methods
   const handleWriteReviewClick = () => {
@@ -68,11 +67,12 @@ export default function Id() {
       name: 'Assorted Pack of 6 (with Mango) Cruffins',
       image: '/image/image3.jpg',
     };
-
+    
     setProductDetails(product);
     setIsPopupVisible(true);
   };
-
+  
+  const [quantity, setQuantity] = useState(1);
   const incrementQuantity = () => setQuantity(prevQuantity => prevQuantity + 1);
   const decrementQuantity = () => setQuantity(prevQuantity => Math.max(prevQuantity - 1, 1));
 

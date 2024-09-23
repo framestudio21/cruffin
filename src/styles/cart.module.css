@@ -1,0 +1,396 @@
+.cartpagemainbody {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 2rem;
+  user-select: none;
+
+  .toptitlediv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #452e36;
+    width: 100%;
+
+    .title {
+      letter-spacing: 3px;
+      font-weight: 800;
+      font-size: 50px;
+      text-transform: capitalize;
+    }
+
+    .titlelink {
+      text-transform: capitalize;
+      letter-spacing: 2px;
+      font-weight: 600;
+      font-size: 25px;
+      cursor: pointer;
+    }
+    .titlelink:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .productcartmainbody {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .itemtable {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      border-bottom: 2px dashed #ccc;
+
+      .tableheaderrow {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+
+        .tableheader1,
+        .tableheader2,
+        .tableheader3 {
+          text-transform: capitalize;
+          text-align: left;
+          letter-spacing: 2px;
+          font-weight: 300;
+          font-size: 30px;
+          padding: 15px;
+          border-bottom: 2px dashed #ccc;
+          color: #ccc;
+        }
+
+        .tableheader1 {
+          width: 50%;
+        }
+        .tableheader2 {
+          width: 30%;
+        }
+        .tableheader3 {
+          width: 20%;
+        }
+      }
+
+      .tabledatarow {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+
+        .tabledata1,
+        .tabledata2,
+        .tabledata3 {
+          text-transform: capitalize;
+          text-align: left;
+          letter-spacing: 2px;
+          font-weight: 300;
+          font-size: 30px;
+          padding: 15px;
+          height: 150px;
+        }
+
+        .tabledata1 {
+          width: 50%;
+          display: flex;
+          gap: 20px;
+          align-items: center;
+          text-transform: capitalize;
+          letter-spacing: 2px;
+          font-weight: 600;
+          font-size: 30px;
+          color: #452e36;
+
+          .image {
+            border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            -ms-border-radius: 10px;
+            -o-border-radius: 10px;
+          }
+
+          .amount {
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            .oldprice {
+              font-size: 16px;
+              text-decoration: line-through;
+              font-weight: 200;
+              color: #ccc;
+            }
+
+            .newprice {
+              font-weight: 500;
+              color: #452e36;
+            }
+          }
+        }
+        .tabledata2 {
+          width: 30%;
+          display: flex;
+          gap: 30px;
+          align-items: center;
+
+          .quantitybox {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid #ccc;
+            width: 70%;
+            user-select: none;
+            color: #452e36;
+            border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            -ms-border-radius: 10px;
+            -o-border-radius: 10px;
+
+            .quantitybutton {
+              border: none;
+              background: none;
+              cursor: pointer;
+              font-size: 30px;
+              padding: 0.5rem 2rem;
+              font-weight: 600;
+              border-radius: 10px;
+              outline: none;
+              -webkit-border-radius: 10px;
+              -moz-border-radius: 10px;
+              -ms-border-radius: 10px;
+              -o-border-radius: 10px;
+            }
+
+            .quantitybutton:hover {
+              background-color: #452e36;
+              color: #fff;
+            }
+
+            .quantityvalue {
+              font-weight: 500;
+              font-size: 20px;
+            }
+          }
+
+          .icon {
+            font-size: 40px;
+            cursor: pointer;
+            color: #ccc;
+          }
+          .icon:hover {
+            color: #452e36;
+          }
+        }
+        .tabledata3 {
+          width: 20%;
+          display: flex;
+          align-items: center;
+          font-weight: 600;
+          letter-spacing: 2px;
+          font-size: 30px;
+        }
+      }
+    }
+  }
+
+  .remarksection {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 1rem;
+
+    .titlesection {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      justify-content: space-between;
+      letter-spacing: 2px;
+      font-weight: 700;
+      text-transform: capitalize;
+      font-size: 25px;
+    }
+
+    .textarea {
+      outline: none;
+      border: 2px dashed #ccc;
+      padding: 2rem;
+      text-transform: capitalize;
+      letter-spacing: 2px;
+      font-weight: 500;
+      font-size: 18px;
+      height: 200px;
+      display: block;
+      border-radius: 10px;
+      resize: none;
+      color: #ccc;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
+    }
+
+    .textarea:hover {
+      border: 2px solid #452e36;
+      color: #452e36;
+    }
+
+    .textarea:focus {
+      border: 2px solid #452e36;
+      color: #452e36;
+    }
+
+    .textarea::placeholder {
+      color: #ccc;
+    }
+  }
+
+  .checkoutsection {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 1rem;
+
+    .cuponsection {
+      border: 2px dashed #ccc;
+      border-radius: 10px;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      letter-spacing: 2px;
+      font-weight: 700;
+      text-transform: capitalize;
+      cursor: pointer;
+
+      .text {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        font-size: 20px;
+      }
+      .icon {
+        font-size: 25px;
+        font-weight: 700;
+      }
+      .iconlink {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+    .cuponsection:hover {
+      background-color: #452e36;
+      border: 2px solid #452e36;
+      color: #fff;
+    }
+
+    .textandlinksection {
+      border-bottom: 2px dashed #ccc;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      letter-spacing: 2px;
+      font-weight: 600;
+      text-transform: capitalize;
+
+      .link:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .amountsection {
+      border-bottom: 2px dashed #ccc;
+      padding: 1rem 2rem;
+      display: flex;
+      flex-direction: column;
+      letter-spacing: 2px;
+      font-weight: 600;
+      text-transform: capitalize;
+      gap: 15px;
+
+      .saveamounttext {
+        color: gold;
+        font-size: 22px;
+      }
+
+      .billbody {
+        border-bottom: 2px dashed #ccc;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 0.5rem 0;
+
+        .text {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0.5rem 0;
+
+          .couponcode{
+            color: #a0a0a0;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+          }
+
+          .amount {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            .cutprice {
+              text-decoration: line-through;
+            }
+
+            .free {
+              color: gold;
+            }
+          }
+        }
+      }
+    }
+
+    .orderbtn {
+      border: none;
+      padding: 1rem;
+      border-radius: 10px;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-transform: capitalize;
+      letter-spacing: 2px;
+      font-size: 25px;
+      color: #452e36;
+      font-weight: 700;
+      background-color: #ccc;
+      outline: none;
+    }
+
+    .orderbtn:hover{
+        background-color: #452e36;
+        color: #fff;
+    }
+    .orderbtn:focus{
+        background-color: #452e36;
+        color: #fff;
+    }
+  }
+}

@@ -9,11 +9,7 @@ import HeroCarousel from "./component/herocarousel";
 import Card from "./component/card";
 import NavBar from "./component/nav";
 import Footer from "./component/footer";
-import PopLogin from "./component/poplogin";
 import Cart from "./component/cart";
-import Login from "./component/login";
-import LoginOtpVerify from "./component/loginotpverify";
-import SignUp from "./component/signup";
 import Pop from "./component/pop";
 
 export default function Home() {
@@ -57,11 +53,7 @@ export default function Home() {
       <NavBar/>
       {/* <HeroCarousel/> */}
       <Footer/>
-      {/* <PopLogin/> */}
-      {/* <Login/> */}
-      {/* <LoginOtpVerify/> */}
       {/* <Cart/> */}
-      {/* <SignUp/> */}
       <Pop/>
 
     </>
