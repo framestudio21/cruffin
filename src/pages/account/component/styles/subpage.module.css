@@ -1,0 +1,452 @@
+.accountsubpagemainbody {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #452e36;
+  scroll-behavior: smooth;
+  user-select: none;
+
+  .header,
+  .formbody,
+  .pagelinkdisplaydiv,
+  .buttonsection,
+  .faqbody,
+  .addaddressbtndiv,
+  .addresssectionbody,
+  .couponsdisplaymainbody,
+  .reviewsectionmainbody {
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+  }
+
+  .pagelinkdisplaydiv {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-transform: uppercase;
+    font-weight: 500;
+    /* font-size: 18px; */
+    letter-spacing: 2px;
+    padding: 1rem 2rem;
+  }
+
+  .header {
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    font-size: 25px;
+    font-weight: 700;
+    padding: 1rem 2rem;
+  }
+
+  .buttonsection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    .submitbtn {
+      width: calc(100% / 2);
+      text-transform: capitalize;
+      letter-spacing: 2px;
+      font-size: 20px;
+      font-weight: 500;
+      margin: auto;
+      outline: none;
+      border: none;
+      color: #452e36;
+      background: none;
+      cursor: pointer;
+    }
+    .submitbtn:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .formbody {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    color: #452e36;
+
+    .inputfieldsection {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      .title {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        text-transform: capitalize;
+        letter-spacing: 1px;
+        font-weight: 600;
+        font-size: 18px;
+
+        .editbtn {
+          text-transform: capitalize;
+          letter-spacing: 1px;
+          outline: none;
+          font-weight: 600;
+          padding: 0;
+          border: none;
+          background: none;
+          cursor: pointer;
+          color: gold;
+        }
+      }
+
+      .inputfielddiv {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+      }
+      .inputfield {
+        width: 100%;
+        padding: 1rem 2rem;
+        outline: none;
+        border: 2px dashed #ccc;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+        letter-spacing: 2px;
+        color: #452e36;
+        text-transform: capitalize;
+        font-weight: 500;
+      }
+
+      .inputfield[type="email"] {
+        text-transform: lowercase;
+      }
+
+      .inputfield:hover {
+        border: 2px solid #452e36;
+        color: #452e36;
+      }
+      .inputfield:focus {
+        border: 2px solid #452e36;
+        color: #452e36;
+      }
+      .radioinput {
+        --s: 1.5em; /* control the size */
+        --c: #009688; /* the active color */
+
+        height: var(--s);
+        aspect-ratio: 1;
+        border: calc(var(--s) / 8) solid #939393;
+        padding: calc(var(--s) / 8);
+        background: radial-gradient(farthest-side, var(--c) 94%, #0000) 50%/0 0
+          no-repeat content-box;
+        border-radius: 50%;
+        outline-offset: calc(var(--s) / 10);
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        cursor: pointer;
+        font-size: inherit;
+        transition: 0.3s;
+      }
+      .radioinput:checked {
+        border-color: var(--c);
+        background-size: 100% 100%;
+      }
+      .radioinputtitle {
+        text-transform: capitalize;
+        font-weight: 500;
+        letter-spacing: 1px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .faqbody {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .title {
+      text-transform: capitalize;
+      letter-spacing: 2px;
+      font-size: 25px;
+      font-weight: 700;
+    }
+
+    .questionanswerbody {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      text-align: justify;
+
+      .questionanswer {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        letter-spacing: 1px;
+        text-transform: capitalize;
+
+        .question {
+          font-weight: 700;
+          display: flex;
+          gap: 10px;
+        }
+
+        .answer {
+          font-weight: 400;
+          display: flex;
+          gap: 10px;
+        }
+      }
+    }
+  }
+
+  .addaddressbtndiv {
+    padding: 1rem 2rem;
+    border: 2px solid transparent;
+    outline: none;
+    cursor: pointer;
+    text-transform: capitalize;
+    display: flex;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    color: blue;
+    letter-spacing: 2px;
+    transition: all ease-in-out 0.2s;
+  }
+  .addaddressbtndiv:hover {
+    background-color: #452e36;
+    color: #fff;
+  }
+
+  .addresssectionbody {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .addressbody {
+      border: 2px dashed #ccc;
+      border-radius: 10px;
+      padding: 1.5rem;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+
+      .tag {
+        display: flex;
+        align-items: center;
+
+        .tagname {
+          padding: 0.2rem 1rem;
+          background-color: #ccc;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          font-size: 14px;
+        }
+      }
+
+      .name {
+        text-transform: capitalize;
+        letter-spacing: 2px;
+        font-weight: 700;
+        font-size: 20px;
+        border-bottom: 2px dashed #ccc;
+        padding: 1rem 0;
+      }
+
+      .contactdiv {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        padding: 1rem 0;
+        border-bottom: 2px dashed #ccc;
+
+        .mobile,
+        .email {
+          display: flex;
+          gap: 10px;
+          text-transform: capitalize;
+          letter-spacing: 2px;
+          font-weight: 600;
+          padding: 0 1rem 0 0;
+          font-size: 18px;
+        }
+
+        .mobile {
+          border-right: 2px dashed #ccc;
+
+          .number {
+            font-weight: 800;
+          }
+        }
+
+        .email {
+          padding: 0 0 0 1rem;
+
+          .emailid {
+            text-transform: lowercase;
+            font-weight: 700;
+          }
+        }
+      }
+
+      .address {
+        text-transform: capitalize;
+        letter-spacing: 2px;
+        font-weight: 400;
+        border-bottom: 2px dashed #ccc;
+        padding: 1rem 0;
+        text-align: justify;
+      }
+
+      .btn {
+        padding: 1rem 0 0 0;
+        display: flex;
+        gap: 10px;
+
+        .edit,
+        .delete {
+          text-transform: capitalize;
+          letter-spacing: 2px;
+          outline: none;
+          border: none;
+          background: none;
+          font-weight: 600;
+          font-size: 14px;
+          color: blue;
+        }
+      }
+    }
+  }
+
+  .couponsdisplaymainbody {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .couponsmainbody {
+      border: 2px solid #ccc;
+      border-radius: 12px;
+      -webkit-border-radius: 12px;
+      -moz-border-radius: 12px;
+      -ms-border-radius: 12px;
+      -o-border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+
+      .couponapplybtn {
+        padding: 1rem;
+        border-radius: 0 0 10px 10px;
+        -webkit-border-radius: 0 0 10px 10px;
+        -moz-border-radius: 0 0 10px 10px;
+        -ms-border-radius: 0 0 10px 10px;
+        -o-border-radius: 0 0 10px 10px;
+        border: none;
+        outline: none;
+        background-color: #ccc;
+        text-transform: capitalize;
+        letter-spacing: 2px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .couponapplybtn:hover {
+        background-color: #452e36;
+        color: #fff;
+      }
+
+      .textsection {
+        display: flex;
+        align-items: center;
+        padding: 0.8rem 1rem;
+        gap: 10px;
+
+        .couponicon {
+          width: 60px;
+          height: 60px;
+        }
+
+        .textarea {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          width: 100%;
+          text-transform: capitalize;
+          letter-spacing: 2px;
+          font-weight: 500;
+
+          .titlesection {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .title {
+              display: flex;
+              gap: 10px;
+              .boldtext {
+                font-weight: 800;
+                color: green;
+              }
+            }
+
+            .time {
+              font-weight: 700;
+              color: red;
+            }
+          }
+
+          .bodysection {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .code > span{
+                font-weight: 800;
+                text-transform: uppercase;
+                color: #696969;
+            }
+
+            .viewtc{
+              color: blue;
+              font-weight: 700;
+              cursor: pointer;
+            }
+
+            .viewtc:hover{
+              text-decoration: underline;
+            }
+          }
+
+          .viewproductslink{
+            font-weight: 700;
+            color: blue;
+          }
+
+          .viewproductslink:hover{
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media print {
+  .radioinput {
+    -webkit-appearance: auto;
+    -moz-appearance: auto;
+    appearance: auto;
+    background: none;
+  }
+}
