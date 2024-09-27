@@ -7,13 +7,7 @@ export default function RatingAndReview() {
   return (
     <>
       <div className={styles.accountsubpagemainbody}>
-        {/* page links div */}
-        <div className={styles.pagelinkdisplaydiv}>
-          <div className={styles.link}>account</div>
-          {">"}
-          <div className={styles.link}>Rating and review</div>
-        </div>
-
+       
         {/* page header div */}
         <div className={styles.header}>my reviews</div>
 

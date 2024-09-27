@@ -1,6 +1,6 @@
 .accountnavbarmainbody {
-  min-width: 350px;
-  max-width: 350px;
+  width: 350px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -35,20 +35,22 @@
       }
 
       .username {
-        font-weight: 600;
+        font-weight: 800;
         letter-spacing: 1px;
         text-transform: capitalize;
-        font-size: 18px;
+        font-size: 20px;
       }
     }
   }
 
-  .linksectiondiv, .policieslinksectiondiv {
+  .linksectiondiv {
     padding: 1rem;
+    height: 100%;
     background-color: #fff;
     color: #452e36;
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     gap: 20px;
     border-radius: 10px;
     -webkit-border-radius: 10px;
@@ -56,61 +58,35 @@
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
 
-    .orderbody {
+    .orderbodylink {
       border-bottom: 2px dashed #ccc;
-      padding: 0.5rem 0;
-    }
-    .myorderedlink {
+      padding: 0.5rem 1rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
       cursor: pointer;
-      border-radius: 10px;
-      -webkit-border-radius: 10px;
-      -moz-border-radius: 10px;
-      -ms-border-radius: 10px;
-      -o-border-radius: 10px;
-      padding: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+      font-size: 18px;
 
       .icon {
         font-size: 30px;
       }
-
-      .header {
-        display: flex;
-        gap: 20px;
-        align-items: center;
-        text-transform: capitalize;
-        letter-spacing: 2px;
-        font-weight: 600;
-        font-size: 20px;
-      }
-    }
-
-    .myorderedlink:hover {
-      color: #fff;
-      background-color: #452e36;
     }
 
     .linkbody {
-      padding: 0.5rem;
+      padding: 1rem;
       display: flex;
       flex-direction: column;
       gap: 10px;
       color: #452e36;
       border-bottom: 2px dashed #ccc;
 
-      .icon {
-        font-size: 30px;
-      }
-
       .header {
-        display: flex;
-        gap: 20px;
-        align-items: center;
-        text-transform: capitalize;
+        text-transform: uppercase;
         letter-spacing: 2px;
-        font-weight: 600;
+        font-weight: 800;
         color: #452e36;
         font-size: 18px;
       }
@@ -124,7 +100,7 @@
         flex-direction: column;
 
         .li {
-          padding: 0.5rem 0.5rem 0.5rem 3.5rem;
+          padding: 0.7rem 1rem;
           border-radius: 10px;
           -webkit-border-radius: 10px;
           -moz-border-radius: 10px;
@@ -171,13 +147,6 @@
         background-color: #452e36;
         border: 2px solid #452e36;
         color: #fff;
-    }
-  }
-
-  .policieslinksectiondiv{
-
-    .linkbody{
-        border: none;
     }
   }
 }

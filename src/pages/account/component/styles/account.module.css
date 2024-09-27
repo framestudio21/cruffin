@@ -1,6 +1,6 @@
 .accountpagemainbody {
   width: 100vw;
-  height: auto;
+  height: 100vh;
   display: flex;
   gap: 20px;
   /* align-items: center; */
@@ -10,8 +10,9 @@
   user-select: none;
 
   .pagesection {
-    /* width: calc(100% - 350px); */
-    width: 100%;
+    width: calc(100% - 350px);
+    overflow-y: scroll;
+    scroll-behavior: smooth;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;

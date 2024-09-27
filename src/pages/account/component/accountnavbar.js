@@ -1,9 +1,17 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";  // Import the useRouter hook
 
 import styles from "../component/styles/accountnavbar.module.css";
 export default function AccountNavBar() {
+
+  const router = useRouter();
+
+  const handleNavigation = (section) => {
+    router.push(`/account?section=${section}`, undefined, { shallow: true });
+  };
+
   return (
     <>
       <div className={styles.accountnavbarmainbody}>
@@ -25,84 +33,40 @@ export default function AccountNavBar() {
         {/* 2nd div link section div */}
         <div className={styles.linksectiondiv}>
           {/* my orders section link div */}
-          <div className={styles.orderbody}>
-            <Link href="#" className={styles.myorderedlink}>
-              <div className={styles.header}>
-                <i
-                  className={`material-icons ${styles.icon}`}
-                  aria-label="shopping_bag"
-                >
-                  shopping_bag
-                </i>
-                <div className={styles.text}>my order</div>
-              </div>
-              <i
-                className={`material-icons ${styles.icon}`}
-                aria-label="arrow_right"
-              >
-                arrow_right
-              </i>
-            </Link>
+          <div className={styles.orderbodylink} onClick={() => handleNavigation('myorder')}>
+            <div className={styles.text}>my order</div>
+            <i
+              className={`material-icons ${styles.icon}`}
+              aria-label="arrow_right"
+            >
+              arrow_right
+            </i>
           </div>
 
           {/* my personal details div */}
           <div className={styles.linkbody}>
-            <div className={styles.header}>
-              <i
-                className={`material-icons ${styles.icon}`}
-                aria-label="admin_panel_settings"
-              >
-                admin_panel_settings
-              </i>
-              <div className={styles.text}>account setting</div>
-            </div>
+            <div className={styles.header}>account setting</div>
 
             <ul className={styles.ul}>
-              <li className={styles.li}>
-                <Link href="#" className={styles.link}>
+              <li className={styles.li} onClick={() => handleNavigation('user')}>
                   personal information
-                </Link>
               </li>
-              <li className={styles.li}>
-                <Link href="#" className={styles.link}>
+              <li className={styles.li} onClick={() => handleNavigation('manageaddress')}>
                   mannager addresses
-                </Link>
               </li>
             </ul>
           </div>
 
           {/* my stuff section div */}
           <div className={styles.linkbody}>
-            <div className={styles.header}>
-              <i
-                className={`material-icons ${styles.icon}`}
-                aria-label="folder_shared"
-              >
-                folder_shared
-              </i>
-              <div className={styles.text}>my stuff</div>
-            </div>
+            <div className={styles.header}>my stuff</div>
 
             <ul className={styles.ul}>
-              <li className={styles.li}>
-                <Link href="#" className={styles.link}>
-                  my coupons
-                </Link>
-              </li>
-              <li className={styles.li}>
-                <Link href="#" className={styles.link}>
+              <li className={styles.li} onClick={() => handleNavigation('reviews')}>
                   my reviews & ratings
-                </Link>
               </li>
-              <li className={styles.li}>
-                <Link href="#" className={styles.link}>
+              <li className={styles.li} onClick={() => handleNavigation('notifications')}>
                   all notification
-                </Link>
-              </li>
-              <li className={styles.li}>
-                <Link href="#" className={styles.link}>
-                  my wishlist
-                </Link>
               </li>
             </ul>
           </div>
@@ -112,8 +76,7 @@ export default function AccountNavBar() {
         </div>
 
         {/* 3rd div link to policies */}
-        <div className={styles.policieslinksectiondiv}>
-                      {/* my personal details div */}
+        {/* <div className={styles.policieslinksectiondiv}>
           <div className={styles.linkbody}>
             <div className={styles.header}>
               <i
@@ -153,7 +116,7 @@ export default function AccountNavBar() {
               </li>
             </ul>
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );

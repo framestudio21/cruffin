@@ -7,16 +7,8 @@ export default function ManagerAddress() {
     <>
       <div className={styles.accountsubpagemainbody}>
 
-
-        {/* page links div */}
-        <div className={styles.pagelinkdisplaydiv}>
-          <div className={styles.link}>account</div>
-          {">"}
-          <div className={styles.link}>manager address</div>
-        </div>
-
         {/* page header div */}
-        {/* <div className={styles.header}>manager addresses</div> */}
+        <div className={styles.header}>manager addresses</div>
 
         {/* add new address button */}
         <button className={styles.addaddressbtndiv}>
