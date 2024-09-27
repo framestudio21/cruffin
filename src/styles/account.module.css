@@ -10,7 +10,8 @@
   user-select: none;
 
   .pagesection {
-    width: calc(100% - 450px);
+    /* width: calc(100% - 350px); */
+    width: 100%;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;

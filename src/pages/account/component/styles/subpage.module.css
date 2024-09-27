@@ -14,7 +14,8 @@
   .addaddressbtndiv,
   .addresssectionbody,
   .couponsdisplaymainbody,
-  .reviewsectionmainbody {
+  .reviewsectionmainbody,
+  .allnotificationdivmainbody {
     padding: 2rem;
     background-color: #fff;
     border-radius: 10px;
@@ -411,32 +412,232 @@
             align-items: center;
             justify-content: space-between;
 
-            .code > span{
-                font-weight: 800;
-                text-transform: uppercase;
-                color: #696969;
+            .code > span {
+              font-weight: 800;
+              text-transform: uppercase;
+              color: #696969;
             }
 
-            .viewtc{
+            .viewtc {
               color: blue;
               font-weight: 700;
               cursor: pointer;
             }
 
-            .viewtc:hover{
+            .viewtc:hover {
               text-decoration: underline;
             }
           }
 
-          .viewproductslink{
+          .viewproductslink {
             font-weight: 700;
             color: blue;
           }
 
-          .viewproductslink:hover{
+          .viewproductslink:hover {
             text-decoration: underline;
           }
         }
+      }
+    }
+  }
+
+  .reviewsectionmainbody {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .oldreviewmainbody {
+      border: 2px dashed #ccc;
+      padding: 1rem;
+      border-radius: 10px;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
+      display: flex;
+      gap: 10px;
+
+      .image {
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+      }
+
+      .textsection {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .title {
+          text-transform: capitalize;
+          letter-spacing: 2px;
+          font-weight: 700;
+          font-size: 18px;
+        }
+
+        .stardiv {
+          display: flex;
+          gap: 10px;
+          color: gold;
+        }
+
+        .reviewtext {
+          text-transform: capitalize;
+          letter-spacing: 1px;
+          font-weight: 400;
+          font-size: 18px;
+          text-align: justify;
+        }
+
+        .ownerdate {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          .owner {
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-size: 14px;
+          }
+
+          .date {
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: #ccc;
+          }
+        }
+
+        .btndiv {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          .btn {
+            border: none;
+            outline: none;
+            background: none;
+            color: blue;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .needreviewmainbody {
+      width: 100%;
+      border: 2px dashed #ccc;
+      padding: 1rem;
+      border-radius: 10px;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+
+      .image {
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+      }
+
+      .textsection {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+
+        .title {
+          text-transform: capitalize;
+          letter-spacing: 2px;
+          font-weight: 700;
+          font-size: 18px;
+        }
+
+        .stardiv {
+          display: flex;
+          gap: 10px;
+          color: gold;
+        }
+
+        .btn {
+          border: none;
+          outline: none;
+          background: none;
+          color: blue;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          font-weight: 700;
+          cursor: pointer;
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  .allnotificationdivmainbody {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #452e36;
+
+    .notificationmainbody {
+      border: 2px dashed #ccc;
+      border-radius: 10px;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
+      padding: 1rem;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      cursor: pointer;
+
+      .image {
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+      }
+
+      .textsection {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        .title {
+          font-weight: 800;
+          letter-spacing: 1px;
+        }
+
+        .date {
+          font-weight: 700;
+          color: #696969;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+      }
+    }
+
+    .notificationmainbody:hover{
+      background-color: #452e36;
+      color: #fff;
+      border: 2px solid #452e36;
+
+      .date{
+        color: #fff;
       }
     }
   }

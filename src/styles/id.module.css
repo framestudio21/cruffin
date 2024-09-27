@@ -1,6 +1,6 @@
 .productidmainbody {
     width: 100vw;
-    height: calc(100vh - 180px);
+    /* height: calc(100vh - 180px); */
     overflow-x: hidden;
     overflow-y: scroll;
     display: flex;
@@ -49,7 +49,7 @@
 
         .detailsbody {
             width: 45%;
-            height: 100%; 
+            /* height: 100%;  */
             /* overflow-y: scroll; */
             display: flex;
             flex-direction: column;
