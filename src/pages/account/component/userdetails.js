@@ -16,109 +16,160 @@ function EditModal({
   const [formData, setFormData] = useState({ ...userData });
   const [password, setPassword] = useState("");
   const [otp, setOtp] = useState("");
+  const [step, setStep] = useState(1); // Track steps (1: Edit, 2: Password, 3: OTP)
+  const [error, setError] = useState(""); // State for error message
+  const [passwordError, setPasswordError] = useState(false);
+
+  // Reset form data when modal opens
+  useEffect(() => {
+    if (show) {
+      setFormData({ ...userData });
+      setPassword("");
+      setOtp("");
+      setStep(1);
+      setError("");
+      setPasswordError(false);
+    }
+  }, [show, userData]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+    console.log('Form Data:', formData); // Log form data on input change
   };
 
-  const handleSave = () => {
-    if (isPasswordRequired && !password) {
-      alert("Password is required to update.");
+  const handlePasswordCheck = () => {
+    if (password !== userData.password) {
+      setPasswordError(true);
       return;
     }
+    setPasswordError(false);
 
-    if (field === "email" && isOTPRequired && !otp) {
-      alert("OTP is required to update email.");
+    if (field === "email" || field === "phone") {
+      // For email or phone, move to OTP step if OTP is required
+      if (isOTPRequired) {
+        setStep(3);
+      } else {
+        onSave(formData); // Save if no OTP is required
+        onClose();
+      }
+    } else if (field === "username") {
+      // For name and gender, directly save after password verification
+      onSave(formData);
+      onClose();
+    }
+  };
+
+  const handleOTPCheck = () => {
+    if (otp.length !== 6 || isNaN(otp)) {
+      setError("Please enter a valid 6-digit OTP.");
       return;
     }
-
-    // Perform API call for validation and save changes
+    // Simulate OTP validation
+    setError("");
     onSave(formData);
     onClose();
   };
 
-  const handleEmailValidation = (email) => {
-    const gmailPattern = /^[a-zA-Z0-9._%+-]+@gmail.com$/;
-    return gmailPattern.test(email);
+  const handleSave = () => {
+    if (step === 1) {
+      if (isPasswordRequired) {
+        setStep(2); // Move to password verification for any field
+      } else {
+        onSave(formData); // Direct save if no password required
+        onClose();
+      }
+    }
   };
 
   if (!show) return null; // Don't render modal if 'show' is false
 
   return (
-    <div className={styles.modal}>
+    <div className={styles.modalmaindivbody}>
       <div className={styles.modalContent}>
-        <h2>Edit {field}</h2>
-        <form className={styles.formbody}>
-          {field === "name_gender" && (
-            <>
-              <div className={styles.inputfieldsection}>
-                <label>First Name</label>
-                <input
-                  type="text"
-                  name="firstname"
-                  value={formData.firstname}
-                  onChange={handleInputChange}
-                  className={styles.inputfield}
-                />
-              </div>
-              <div className={styles.inputfieldsection}>
-                <label>Last Name</label>
-                <input
-                  type="text"
-                  name="lastname"
-                  value={formData.lastname}
-                  onChange={handleInputChange}
-                  className={styles.inputfield}
-                />
-              </div>
-              <div className={styles.inputfieldsection}>
-                <label>Gender</label>
-                <select
-                  name="gender"
-                  value={formData.gender}
-                  onChange={handleInputChange}
-                  className={styles.inputfield}
-                >
-                  <option value="male">Male</option>
-                  <option value="female">Female</option>
-                </select>
-              </div>
-            </>
-          )}
-
-          {field === "email" && (
-            <div className={styles.inputfieldsection}>
-              <label>Email</label>
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleInputChange}
-                className={styles.inputfield}
-              />
-              {!handleEmailValidation(formData.email) && (
-                <p className={styles.error}>
-                  Please enter a valid Gmail address.
-                </p>
+       
+        {step === 1 && (
+          <>
+            <div className={styles.title}>Edit {field}</div>
+            <form className={styles.formbody}>
+              {field === "username" && (
+                <>
+                  <div className={styles.inputfieldsection}>
+                    <label className={styles.label}>First Name</label>
+                    <input
+                      type="text"
+                      name="firstname"
+                      value={formData.firstname}
+                      onChange={handleInputChange}
+                      className={styles.inputfield}
+                    />
+                  </div>
+                  <div className={styles.inputfieldsection}>
+                    <label className={styles.label}>Last Name</label>
+                    <input
+                      type="text"
+                      name="lastname"
+                      value={formData.lastname}
+                      onChange={handleInputChange}
+                      className={styles.inputfield}
+                    />
+                  </div>
+                  <div className={styles.inputfieldsection}>
+                    <label className={styles.label}>Gender</label>
+                    <select
+                      name="gender"
+                      value={formData.gender}
+                      onChange={handleInputChange}
+                      className={styles.inputfield}
+                    >
+                      <option value="male">Male</option>
+                      <option value="female">Female</option>
+                    </select>
+                  </div>
+                </>
               )}
-            </div>
-          )}
 
-          {field === "phone" && (
-            <div className={styles.inputfieldsection}>
-              <label>Phone</label>
-              <input
-                type="tel"
-                name="phone"
-                value={formData.phone}
-                onChange={handleInputChange}
-                className={styles.inputfield}
-              />
-            </div>
-          )}
+              {field === "email" && (
+                <div className={styles.inputfieldsection}>
+                  <label className={styles.label}>Email</label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    className={styles.inputfield}
+                  />
+                </div>
+              )}
 
-          {isPasswordRequired && (
+              {field === "phone" && (
+                <div className={styles.inputfieldsection}>
+                  <label className={styles.label}>Phone</label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    className={styles.inputfield}
+                  />
+                </div>
+              )}
+
+              <div className={styles.buttonsection}>
+                <button type="button" className={styles.submitbtn} onClick={handleSave}>
+                  Continue
+                </button>
+                <button type="button" className={styles.closebtn} onClick={onClose}>
+                  Cancel
+                </button>
+              </div>
+            </form>
+          </>
+        )}
+
+        {step === 2 && (
+          <>
+            <h2>Password Verification</h2>
             <div className={styles.inputfieldsection}>
               <label>Password</label>
               <input
@@ -128,12 +179,24 @@ function EditModal({
                 onChange={(e) => setPassword(e.target.value)}
                 className={styles.inputfield}
               />
+              {passwordError && <p className={styles.error}>Password is incorrect. Please try again.</p>}
             </div>
-          )}
+            <div className={styles.buttonsection}>
+              <button type="button" className={styles.submitbtn} onClick={handlePasswordCheck}>
+                continue
+              </button>
+              <button type="button" className={styles.closebtn} onClick={onClose}>
+                Cancel
+              </button>
+            </div>
+          </>
+        )}
 
-          {isOTPRequired && field === "email" && (
+        {step === 3 && isOTPRequired && (field === "email" || field === "phone") && (
+          <>
+            <h2>OTP Verification</h2>
             <div className={styles.inputfieldsection}>
-              <label>OTP</label>
+              <label>Enter OTP</label>
               <input
                 type="text"
                 name="otp"
@@ -141,43 +204,26 @@ function EditModal({
                 onChange={(e) => setOtp(e.target.value)}
                 className={styles.inputfield}
               />
+              {error && <p className={styles.error}>{error}</p>}
             </div>
-          )}
-
-          <div className={styles.buttonsection}>
-            <button
-              type="button"
-              className={styles.submitbtn}
-              onClick={handleSave}
-            >
-              Save
-            </button>
-            <button
-              type="button"
-              className={styles.submitbtn}
-              onClick={onClose}
-            >
-              Cancel
-            </button>
-          </div>
-        </form>
+            <div className={styles.buttonsection}>
+              <button type="button" className={styles.submitbtn} onClick={handleOTPCheck}>
+                Verify OTP
+              </button>
+              <button type="button" className={styles.closebtn} onClick={onClose}>
+                Cancel
+              </button>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
 }
 
+
+
 export default function UserDetails() {
-  // sample user details
-  // const userSampleData = [
-  //   {
-  //     id: 1,
-  //     firstname: "sumit kumar",
-  //     lastname: "duary",
-  //     email: "duary.sumit21@gmail.com",
-  //     phone: "6290985252",
-  //     gender: "male",
-  //   },
-  // ];
 
   const [userData, setUserData] = useState({
     firstname: "sumit kumar",
@@ -229,7 +275,7 @@ export default function UserDetails() {
               <button
                 type="button"
                 className={styles.editbtn}
-                onClick={() => handleEditClick("name_gender")}
+                onClick={() => handleEditClick("username")}
               >
                 edit
               </button>
@@ -253,29 +299,6 @@ export default function UserDetails() {
               />
             </div>
             <div className={styles.inputfielddiv}>
-              {/* <input
-                type="radio"
-                id="male"
-                name="gender"
-                className={styles.radioinput}
-                value={userData.gender}
-                readOnly
-              />
-              <label for="male" className={styles.radioinputtitle}>
-                male
-              </label>
-              <input
-                type="radio"
-                id="female"
-                name="gender"
-                className={styles.radioinput}
-                value={userData.gender}
-                readOnly
-              />
-              <label for="female" className={styles.radioinputtitle}>
-                female
-              </label> */}
-
               <input
                 type="text"
                 value={userData.gender}
