@@ -198,6 +198,7 @@
           font-weight: 600;
           font-size: 14px;
           color: blue;
+          cursor: pointer;
         }
       }
     }
@@ -549,34 +550,35 @@
     gap: 10px;
     width: 100%;
   }
-  .inputfield {
-    width: 100%;
-    padding: 1rem 2rem;
-    outline: none;
-    border: 2px dashed #ccc;
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
-    letter-spacing: 2px;
-    color: #452e36;
-    text-transform: capitalize;
-    font-weight: 500;
-  }
+}
 
-  .inputfield[type="email"] {
-    text-transform: lowercase;
-  }
+.inputfield {
+  width: 100%;
+  padding: 1rem 2rem;
+  outline: none;
+  border: 2px dashed #ccc;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  letter-spacing: 2px;
+  color: #452e36;
+  text-transform: capitalize;
+  font-weight: 500;
+}
 
-  .inputfield:hover {
-    border: 2px solid #452e36;
-    color: #452e36;
-  }
-  .inputfield:focus {
-    border: 2px solid #452e36;
-    color: #452e36;
-  }
+.inputfield[type="email"] {
+  text-transform: lowercase;
+}
+
+.inputfield:hover {
+  border: 2px solid #452e36;
+  color: #452e36;
+}
+.inputfield:focus {
+  border: 2px solid #452e36;
+  color: #452e36;
 }
 
 .buttonsection {
@@ -585,7 +587,8 @@
   justify-content: space-between;
   gap: 10px;
 
-  .submitbtn, .closebtn {
+  .submitbtn,
+  .closebtn {
     width: calc(100% / 2);
     text-transform: capitalize;
     letter-spacing: 2px;
@@ -642,7 +645,7 @@
       gap: 20px;
     }
 
-    .error{
+    .error {
       text-transform: capitalize;
       letter-spacing: 1px;
       font-size: 14px;
@@ -654,7 +657,8 @@
       display: flex;
       align-items: center;
 
-      .submitbtn, .closebtn {
+      .submitbtn,
+      .closebtn {
         width: 100%;
         padding: 0.8rem 1rem;
         border-radius: 100px;
@@ -667,16 +671,136 @@
         -o-border-radius: 100px;
         font-weight: 600;
       }
-      .submitbtn:hover{
+      .submitbtn:hover {
         background-color: #452e36;
         color: #fff;
         text-decoration: none;
       }
-      .submitbtn:focus{
+      .submitbtn:focus {
         background-color: #452e36;
         color: #fff;
         text-decoration: none;
       }
+    }
+  }
+}
+
+.formpopupdiv {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  overflow: hidden;
+
+  .formcontainer {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 40%;
+    height: 90%;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    gap: 20px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+
+    .error{
+      text-transform: capitalize;
+      color: red;
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    .title {
+      text-transform: capitalize;
+      font-weight: 700;
+      font-size: 30px;
+      letter-spacing: 2px;
+      text-align: left;
+      width: 100%;
+      border-bottom: 2px dashed #ccc;
+    }
+
+    .googlemapbtn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 2rem;
+      gap: 10px;
+      font-weight: 700;
+      text-transform: capitalize;
+      letter-spacing: 1px;
+      font-size: 18px;
+      border-radius: 10px;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
+      border: 2px dashed #ccc;
+      cursor: pointer;
+
+      .mapimage {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    .googlemapbtn:hover {
+      border: 2px solid #452e36;
+      background-color: #452e36;
+      color: #fff;
+    }
+
+    .inputfieldsection {
+      flex-direction: row;
+
+      .formpopupdivinputfielddiv{
+        width: 100%;
+      }
+    }
+
+    .btnsection{
+      display: flex;
+      gap: 20px;
+
+    }
+    .submitbtn,
+    .closebtn {
+      width: calc(100% / 2);
+      text-transform: capitalize;
+      letter-spacing: 2px;
+      font-size: 20px;
+      font-weight: 500;
+      border-radius: 10px;
+      outline: none;
+      border: 2px dashed #ccc;
+      background: none;
+      cursor: pointer;
+      padding: 0.8rem;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
+}
+    .submitbtn:hover {
+      color: #fff;
+      background-color: #452e36;
+      border: 2px solid #452e36;
+    }
+    .closebtn:hover{
+      border: 2px solid #452e36;
     }
   }
 }
