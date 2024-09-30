@@ -204,117 +204,6 @@
     }
   }
 
-  .couponsdisplaymainbody {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-
-    .couponsmainbody {
-      border: 2px solid #ccc;
-      border-radius: 12px;
-      -webkit-border-radius: 12px;
-      -moz-border-radius: 12px;
-      -ms-border-radius: 12px;
-      -o-border-radius: 12px;
-      display: flex;
-      flex-direction: column;
-
-      .couponapplybtn {
-        padding: 1rem;
-        border-radius: 0 0 10px 10px;
-        -webkit-border-radius: 0 0 10px 10px;
-        -moz-border-radius: 0 0 10px 10px;
-        -ms-border-radius: 0 0 10px 10px;
-        -o-border-radius: 0 0 10px 10px;
-        border: none;
-        outline: none;
-        background-color: #ccc;
-        text-transform: capitalize;
-        letter-spacing: 2px;
-        font-weight: 600;
-        cursor: pointer;
-      }
-
-      .couponapplybtn:hover {
-        background-color: #452e36;
-        color: #fff;
-      }
-
-      .textsection {
-        display: flex;
-        align-items: center;
-        padding: 0.8rem 1rem;
-        gap: 10px;
-
-        .couponicon {
-          width: 60px;
-          height: 60px;
-        }
-
-        .textarea {
-          display: flex;
-          flex-direction: column;
-          gap: 5px;
-          width: 100%;
-          text-transform: capitalize;
-          letter-spacing: 2px;
-          font-weight: 500;
-
-          .titlesection {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            .title {
-              display: flex;
-              gap: 10px;
-              .boldtext {
-                font-weight: 800;
-                color: green;
-              }
-            }
-
-            .time {
-              font-weight: 700;
-              color: red;
-            }
-          }
-
-          .bodysection {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            .code > span {
-              font-weight: 800;
-              text-transform: uppercase;
-              color: #696969;
-            }
-
-            .viewtc {
-              color: blue;
-              font-weight: 700;
-              cursor: pointer;
-            }
-
-            .viewtc:hover {
-              text-decoration: underline;
-            }
-          }
-
-          .viewproductslink {
-            font-weight: 700;
-            color: blue;
-          }
-
-          .viewproductslink:hover {
-            text-decoration: underline;
-          }
-        }
-      }
-    }
-  }
-
   .reviewsectionmainbody {
     display: flex;
     flex-direction: column;
@@ -440,7 +329,7 @@
         .stardiv {
           display: flex;
           gap: 10px;
-          color: gold;
+          color: gray;
         }
 
         .btn {

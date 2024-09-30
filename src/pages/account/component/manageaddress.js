@@ -100,39 +100,47 @@ export default function ManagerAddress() {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
 
-    // Check if the input is for addressDetails
-    if (name in newAddress) {
-        setNewAddress({ ...newAddress, [name]: value });
-    } else if (name in newAddress.addressDetails) {
-        setNewAddress({
-            ...newAddress,
-            addressDetails: { 
-                ...newAddress.addressDetails, 
-                [name]: value 
-            },
-        });
-    }
+  if (name in newAddress.addressDetails) {
+    // If the name is a part of addressDetails
+    setNewAddress({
+      ...newAddress,
+      addressDetails: {
+        ...newAddress.addressDetails,
+        [name]: value,
+      },
+    });
+  } else {
+    // For the other fields in newAddress
+    setNewAddress({
+      ...newAddress,
+      [name]: value,
+    });
+  }
 };
 
 
   // Handle form submission
   const handleFormSubmit = () => {
 
+    console.log("Form Data:", newAddress);
+    setSampleAddress([newAddress, ...sampleAddress]);
+
       // Reset previous errors
   setFormErrors({});
 
-  let errors = {};
 
-  const { name, mobile, email, pincode, address, city, district, state, type } = newAddress;
+  const { name, mobile, email, addressDetails, type } = newAddress;
+  const { pincode, address, city, district, state } = addressDetails;
+  let errors = {};
 
   if (!name) errors.name = "Name is required.";
   if (!mobile) errors.mobile = "Mobile number is required.";
   if (!email) errors.email = "Email is required.";
   if (!pincode) errors.pincode = "Pincode is required.";
   if (!address) errors.address = "Address is required.";
-  if (!address) errors.city = "city is required.";
-  if (!address) errors.district = "district is required.";
-  if (!address) errors.state = "state is required.";
+  if (!city) errors.city = "city is required.";
+  if (!district) errors.district = "district is required.";
+  if (!state) errors.state = "state is required.";
   if (!type) errors.type = "Please select an address type (Home or Work).";
 
   // If there are any errors, set the errors state and return
@@ -141,16 +149,7 @@ export default function ManagerAddress() {
     return; // Prevent submission if validation fails
   }
 
-      // Validation for required fields
-  if (!name || !mobile || !email || !pincode || !address || !type) {
-    alert("Please fill out all required fields.");
-    return; // Prevent submission if validation fails
-  }
-
-
-    console.log("Form Data:", newAddress);
-    setSampleAddress([newAddress, ...sampleAddress]);
-
+    // Update or add the new address
     if (editingIndex !== null) {
       // Edit existing address
       const updatedAddresses = [...sampleAddress];
@@ -160,6 +159,12 @@ export default function ManagerAddress() {
       // Add new address
       setSampleAddress([newAddress, ...sampleAddress]);
     }
+
+      // Validation for required fields
+  if (!name || !mobile || !email || !pincode || !address || !type) {
+    alert("Please fill out all required fields.");
+    return; // Prevent submission if validation fails
+  }
 
     // Clear the form after submission
     resetForm();
@@ -204,7 +209,7 @@ export default function ManagerAddress() {
     setEditingIndex(null);
     setShowForm(false); // Close the form after saving
   };
-
+  
   const handleEditClick = (index) => {
     setNewAddress(sampleAddress[index]);
     setEditingIndex(index); // Set the index of the address being edited
@@ -437,7 +442,7 @@ export default function ManagerAddress() {
               </div>
 
               <div className={styles.btnsection}>
-              <button className={styles.submitbtn} onClick={handleFormSubmit}>Save</button>
+              <button className={styles.submitbtn}onClick={handleFormSubmit}>Save</button>
               <button className={styles.closebtn} onClick={() => setShowForm(false)}>Cancel</button>
               </div>
             </div>
