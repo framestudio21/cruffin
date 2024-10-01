@@ -144,15 +144,18 @@ export default function Nav() {
             </i>
           </div>
           <div className={Styles.profilecart}>
+            <Link href="/account">
             <i
               className={`material-icons ${Styles.icons}`}
               aria-label="Profile"
             >
               account_circle
-            </i>
+            </i></Link>
+            <Link href="/cart">
             <i className={`material-icons ${Styles.icons}`} aria-label="Cart">
               local_mall
             </i>
+            </Link>
           </div>
         </div>
         <div className={Styles.searchdiv}>

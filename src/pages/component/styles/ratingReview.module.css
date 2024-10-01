@@ -27,11 +27,13 @@
       align-items: center;
       justify-content: space-between;
       font-size: 30px;
+      padding-bottom: 1rem;
+      border-bottom: 2px dashed #ccc;
 
       .text {
         text-transform: capitalize;
         letter-spacing: 2px;
-        font-weight: 600;
+        font-weight: 800;
       }
 
       .icon {
@@ -40,16 +42,9 @@
       }
     }
 
-    .bar {
-      width: 100%;
-      height: 2px;
-      background-color: #452e36;
-    }
-
     .imagebody {
       display: flex;
       gap: 15px;
-      align-items: center;
 
       .image{
         border-radius: 10px;
@@ -94,15 +89,21 @@
       gap: 30px;
 
       .submitbtn {
+        width: 50%;
         letter-spacing: 2px;
         font-weight: 600;
-        border: 2px dashed #452e36;
-        padding: 1rem 2rem;
+        border: 2px dashed #ccc;
+        padding: 1rem 4rem;
         text-transform: capitalize;
         background: none;
         cursor: pointer;
         font-size: 20px;
-      }
+        border-radius: 100px;
+        -webkit-border-radius: 100px;
+        -moz-border-radius: 100px;
+        -ms-border-radius: 100px;
+        -o-border-radius: 100px;
+}
 
       .submitbtn:hover{
         background-color: #452e36;
@@ -135,11 +136,11 @@
           }
         }
 
-        .input {
+        .input, .emailinput {
           height: 70px;
           padding: 20px;
           text-transform: capitalize;
-          letter-spacing: 1px;
+          letter-spacing: 2px;
           font-weight: 600;
           border: 2px dashed #ccc;
           outline: none;
@@ -148,6 +149,9 @@
           -moz-border-radius: 10px;
           -ms-border-radius: 10px;
           -o-border-radius: 10px;
+        }
+        .emailinput{
+          text-transform: lowercase;
         }
         .textarea {
           height: 220px;
@@ -169,7 +173,16 @@
         }
 
         .input:hover,
-        .textarea:hover {
+        .textarea:hover,
+        .emailinput:hover
+        {
+          border: 2px solid #452e36;
+        }
+
+        .input:focus,
+        .textarea:focus,
+        .emailinput:focus
+        {
           border: 2px solid #452e36;
         }
 

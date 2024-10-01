@@ -44,8 +44,6 @@ export default function AccountNavBar() {
           </div>
 
           {/* my personal details div */}
-          <div className={styles.linkbody}>
-            <div className={styles.header}>account setting</div>
 
             <ul className={styles.ul}>
               <li className={styles.li} onClick={() => handleNavigation('user')}>
@@ -54,69 +52,15 @@ export default function AccountNavBar() {
               <li className={styles.li} onClick={() => handleNavigation('manageaddress')}>
                   mannager addresses
               </li>
-            </ul>
-          </div>
-
-          {/* my stuff section div */}
-          <div className={styles.linkbody}>
-            <div className={styles.header}>my stuff</div>
-
-            <ul className={styles.ul}>
               <li className={styles.li} onClick={() => handleNavigation('reviews')}>
                   my reviews & ratings
               </li>
-              <li className={styles.li} onClick={() => handleNavigation('notifications')}>
-                  all notification
-              </li>
             </ul>
-          </div>
 
           {/* log out button */}
           <button className={styles.logoutbtn}>logout</button>
         </div>
 
-        {/* 3rd div link to policies */}
-        {/* <div className={styles.policieslinksectiondiv}>
-          <div className={styles.linkbody}>
-            <div className={styles.header}>
-              <i
-                className={`material-icons ${styles.icon}`}
-                aria-label="help"
-              >
-                help
-              </i>
-              <div className={styles.text}>policies</div>
-            </div>
-
-            <ul className={styles.ul}>
-              <li className={styles.li}>
-                <Link href="#" className={styles.link}>
-                  privacy policy
-                </Link>
-              </li>
-              <li className={styles.li}>
-                <Link href="#" className={styles.link}>
-                  refund policy
-                </Link>
-              </li>
-              <li className={styles.li}>
-                <Link href="#" className={styles.link}>
-                  shipping policy
-                </Link>
-              </li>
-              <li className={styles.li}>
-                <Link href="#" className={styles.link}>
-                  term of service
-                </Link>
-              </li>
-              <li className={styles.li}>
-                <Link href="#" className={styles.link}>
-                  contact information
-                </Link>
-              </li>
-            </ul>
-          </div>
-        </div> */}
       </div>
     </>
   );
